@@ -82,7 +82,7 @@
     .nav-btn-mobile-wrapper { display: none; }
     .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; }
 
-    /* HERO SECTION COM VÍDEO SEM BUG */
+    /* HERO SECTION COM VÍDEO YOUTUBE IFRAME */
     .hero {
       position: relative;
       padding-top: 180px; padding-bottom: 120px;
@@ -100,13 +100,13 @@
       pointer-events: none;
       overflow: hidden;
     }
-    .hero-video-element {
+    .hero-video-iframe {
       position: absolute;
       top: 50%; left: 50%;
-      min-width: 100%; min-height: 100%;
-      width: auto; height: auto;
+      width: 100vw; height: 56.25vw;
+      min-height: 100vh; min-width: 177.77vh;
       transform: translate(-50%, -50%);
-      object-fit: cover;
+      border: none;
     }
     .hero-overlay {
       position: absolute;
@@ -205,9 +205,7 @@
     }
     .b2b-form-card input:focus { border-color: var(--primary-highlight); background: rgba(0,0,0,0.4); }
 
-    /* =========================================
-       SEÇÃO LOJAS OFICIAIS REDESENHADA (SÓBRIA & PREMIUM)
-       ========================================= */
+    /* LOJAS OFICIAIS */
     .official-stores-section {
       background: linear-gradient(180deg, #121124 0%, #1E1C3C 100%);
       color: var(--white);
@@ -257,7 +255,6 @@
       letter-spacing: -0.03em;
     }
 
-    /* Cores Sóbrias e Ajustadas */
     .ml-color {
       color: #f7d02c;
       text-shadow: 0 4px 20px rgba(247, 208, 44, 0.25);
@@ -303,9 +300,7 @@
     }
     .whatsapp-float:hover { transform: scale(1.1); }
 
-    /* =========================================
-       AJUSTES RESPONSIVOS MOBILE / TABLET
-       ========================================= */
+    /* RESPONSIVIDADE */
     @media (max-width: 992px) {
       .hero-title { font-size: 2.8rem; }
       .b2b-grid, .about-grid { grid-template-columns: 1fr; }
@@ -347,7 +342,6 @@
       .section-padding { padding: 60px 0; }
       .section-title { font-size: 1.8rem; line-height: 1.25; }
       
-      /* Otimização da Seção Quem Somos no Mobile */
       .about-grid { gap: 36px; grid-template-columns: 1fr; }
       .about-features { gap: 18px; margin-top: 20px; }
       .about-feature i { padding: 12px; font-size: 1.2rem; }
@@ -398,12 +392,15 @@
     </div>
   </header>
 
-  <!-- HERO SECTION COM VÍDEO -->
+  <!-- HERO SECTION COM VÍDEO EMBED DO YOUTUBE (KEFt2quibkg) -->
   <section id="home" class="hero">
     <div class="hero-video-container">
-      <video autoplay loop muted playsinline class="hero-video-element">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-office-space-with-desks-and-chairs-41551-large.mp4" type="video/mp4">
-      </video>
+      <iframe 
+        class="hero-video-iframe" 
+        src="https://www.youtube-nocookie.com/embed/KEFt2quibkg?autoplay=1&mute=1&loop=1&playlist=KEFt2quibkg&controls=0&showinfo=0&rel=0&enablejsapi=1" 
+        allow="autoplay; encrypted-media" 
+        frameborder="0">
+      </iframe>
       <div class="hero-overlay"></div>
     </div>
 
@@ -559,7 +556,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO LOJAS OFICIAIS (NOVO DESIGN LUXO SÓBRIO) -->
+  <!-- SEÇÃO LOJAS OFICIAIS -->
   <section id="lojas" class="section-padding official-stores-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
