@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Marqs Home | Importadora & Vendas Corporativas</title>
+  
+  <meta name="description" content="Importadora líder em soluções para Casa, Jardim, Lazer e Linha Infantil. Condições especiais em atacado para empresas.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-highlight: #8a69d4;
+      --primary-dark: #1E1C3C;
+      --white: #FFFFFF;
+      --bg-light: #F8F9FD;
+      --text-dark: #1C1C28;
+      --text-muted: #62627A;
+      --border-color: #E2E4EC;
+      --font-main: 'Inter', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-weight: 700; color: var(--primary-dark); letter-spacing: -0.02em; }
+    a { text-decoration: none; color: inherit; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px; padding: 14px 28px; border-radius: 50px;
+      font-weight: 600; font-size: 1rem; transition: var(--transition);
+      cursor: pointer; border: none; text-align: center;
+    }
+    .btn-primary {
+      background: var(--primary-highlight); color: var(--white);
+      box-shadow: 0 10px 25px rgba(138, 105, 212, 0.3);
+    }
+    .btn-primary:hover {
+      background: #7853c8; transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(138, 105, 212, 0.4);
+    }
+    .btn-outline { border: 2px solid var(--primary-dark); color: var(--primary-dark); background: transparent; }
+    .btn-outline:hover { background: var(--primary-dark); color: var(--white); transform: translateY(-3px); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* HEADER */
+    .header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color); transition: var(--transition);
+    }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+    .brand-logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--primary-dark); }
+    .logo-symbol {
+      width: 38px; height: 38px; background: var(--primary-highlight);
+      clip-path: polygon(50% 0%, 100% 35%, 80% 35%, 80% 100%, 20% 100%, 20% 35%, 0% 35%);
+      border-radius: 4px;
+    }
+    .brand-logo span { color: var(--primary-highlight); }
+    
+    .nav-menu { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-link { font-weight: 500; color: var(--primary-dark); transition: var(--transition); position: relative; }
+    .nav-link:hover { color: var(--primary-highlight); }
+    .nav-link::after {
+      content: ''; position: absolute; width: 0; height: 2px;
+      bottom: -4px; left: 0; background-color: var(--primary-highlight); transition: var(--transition);
+    }
+    .nav-link:hover::after { width: 100%; }
+    
+    .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; }
+
+    /* HERO SECTION COM VÍDEO DO YOUTUBE */
+    .hero {
+      position: relative;
+      padding-top: 180px; padding-bottom: 120px;
+      color: var(--white);
+      overflow: hidden;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      background: var(--primary-dark);
+    }
+    .hero-video-container {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-video-iframe {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 100vw; height: 56.25vw;
+      min-height: 100vh; min-width: 177.77vh;
+      transform: translate(-50%, -50%);
+      border: none;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(30, 28, 60, 0.88) 0%, rgba(45, 42, 86, 0.82) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero-title { font-size: 3.5rem; line-height: 1.15; color: var(--white); margin-bottom: 24px; }
+    .hero-title span { color: var(--primary-highlight); }
+    .hero-subtitle { font-size: 1.2rem; color: #E0E1F0; margin-bottom: 36px; max-width: 650px; }
+    
+    .hero-badges { display: flex; gap: 30px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 28px; }
+    .badge-item { display: flex; align-items: center; gap: 12px; }
+    .badge-item i { font-size: 2rem; color: var(--primary-highlight); }
+    .badge-text strong { display: block; font-size: 1.3rem; color: var(--white); }
+    .badge-text span { font-size: 0.9rem; color: #C0C2D8; }
+
+    /* STATS */
+    .stats-section { margin-top: -50px; position: relative; z-index: 10; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      background: var(--white); border-radius: 20px; padding: 40px;
+      box-shadow: 0 20px 40px rgba(30, 28, 60, 0.08);
+    }
+    .stat-card { text-align: center; border-right: 1px solid var(--border-color); }
+    .stat-card:last-child { border-right: none; }
+    .stat-number { font-size: 2.8rem; font-weight: 800; color: var(--primary-highlight); margin-bottom: 4px; }
+    .stat-label { color: var(--text-muted); font-weight: 500; }
+
+    /* INSTITUCIONAL */
+    .section-padding { padding: 100px 0; }
+    .section-tag {
+      text-transform: uppercase; font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 2px; color: var(--primary-highlight); margin-bottom: 12px; display: block;
+    }
+    .section-title { font-size: 2.4rem; margin-bottom: 16px; }
+    
+    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+    .about-features { display: flex; flex-direction: column; gap: 24px; margin-top: 30px; }
+    .about-feature { display: flex; gap: 16px; align-items: flex-start; }
+    .about-feature i {
+      font-size: 1.4rem; color: var(--primary-highlight); 
+      background: rgba(138, 105, 212, 0.1); padding: 14px; border-radius: 12px;
+    }
+    .about-feature h4 { margin-bottom: 6px; font-size: 1.15rem; }
+    .about-feature p { color: var(--text-muted); font-size: 0.95rem; }
+    
+    .about-card {
+      background: var(--white); border: 1px solid var(--border-color);
+      border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(30, 28, 60, 0.06);
+    }
+    .about-card h3 { font-size: 1.4rem; margin-bottom: 16px; }
+
+    /* PRODUCTS */
+    .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px auto; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+    .product-card {
+      background: var(--white); border-radius: 16px; padding: 30px;
+      border: 1px solid var(--border-color); transition: var(--transition);
+      display: flex; flex-direction: column; position: relative;
+    }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(138, 105, 212, 0.12); border-color: var(--primary-highlight); }
+    .product-icon {
+      width: 60px; height: 60px; border-radius: 12px; background: rgba(138, 105, 212, 0.1);
+      color: var(--primary-highlight); display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; margin-bottom: 24px;
+    }
+    .product-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .product-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; flex-grow: 1; }
+
+    /* ATACADO COM FORMULÁRIO */
+    .b2b-section { background: var(--primary-dark); color: var(--white); border-radius: 32px; padding: 80px 60px; }
+    .b2b-section h2 { color: var(--white); font-size: 2.4rem; margin-bottom: 20px; }
+    .b2b-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .b2b-features { list-style: none; margin: 30px 0; }
+    .b2b-features li { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; font-size: 1.05rem; }
+    .b2b-features i { color: var(--primary-highlight); font-size: 1.2rem; }
+
+    .b2b-form-card {
+      background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 24px;
+      padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .b2b-form-card h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 8px; }
+    .b2b-form-card input {
+      width: 100%; padding: 14px 18px; border-radius: 10px; margin-bottom: 16px;
+      border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.25); color: white;
+      font-family: var(--font-main); font-size: 0.95rem; outline: none; transition: var(--transition);
+    }
+    .b2b-form-card input:focus { border-color: var(--primary-highlight); background: rgba(0,0,0,0.4); }
+
+    /* CHANNELS */
+    .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .channel-card {
+      background: var(--white); border-radius: 16px; padding: 40px 30px;
+      text-align: center; border: 1px solid var(--border-color); transition: var(--transition);
+    }
+    .channel-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+    .channel-logo { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
+    .ml-color { color: #FFE600; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+    .shopee-color { color: #EE4D2D; }
+    .amazon-color { color: #FF9900; }
+
+    /* FOOTER */
+    .footer { background: var(--primary-dark); color: var(--white); padding: 80px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; }
+    .footer-title { color: var(--white); font-size: 1.1rem; margin-bottom: 24px; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: #A0A2B8; transition: var(--transition); }
+    .footer-links a:hover { color: var(--primary-highlight); }
+    .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: #7A7C95; font-size: 0.9rem; }
+
+    /* FLOAT WHATSAPP */
+    .whatsapp-float {
+      position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+      background: #25D366; color: white; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-size: 30px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition);
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+    /* OTIMIZAÇÃO RESPONSIVA */
+    @media (max-width: 992px) {
+      .hero-title { font-size: 2.8rem; }
+      .b2b-grid, .about-grid { grid-template-columns: 1fr; }
+      .stats-grid, .channels-grid { grid-template-columns: 1fr; }
+      .stat-card { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+      .stat-card:last-child { border-bottom: none; padding-bottom: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .header { padding: 5px 0; }
+      .nav-menu {
+        position: absolute; top: 80px; left: 0; width: 100%;
+        background: var(--white); flex-direction: column; gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-top: 1px solid var(--border-color);
+        max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;
+      }
+      .nav-menu.active { max-height: 400px; }
+      .nav-menu li { width: 100%; text-align: left; border-bottom: 1px solid var(--bg-light); }
+      .nav-link { display: block; padding: 18px 24px; width: 100%; }
+      .nav-btn-mobile { margin: 15px 24px; width: calc(100% - 48px); text-align: center; }
+      
+      .mobile-toggle { display: block; }
+      
+      .hero { padding-top: 140px; padding-bottom: 80px; text-align: center; }
+      .hero-title { font-size: 2.2rem; }
+      .hero-subtitle { margin: 0 auto 30px auto; font-size: 1rem; }
+      .hero-badges { justify-content: center; flex-wrap: wrap; gap: 15px; }
+      
+      .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
+      
+      .section-padding { padding: 60px 0; }
+      .section-title { font-size: 1.8rem; }
+      
+      .about-card { padding: 30px 20px; }
+      
+      .b2b-section { padding: 40px 24px; border-radius: 20px; }
+      .b2b-section h2 { font-size: 1.8rem; text-align: center; }
+      .b2b-features li { justify-content: flex-start; text-align: left; font-size: 0.95rem; }
+      .b2b-form-card { padding: 24px; }
+      
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+      .footer-brand { display: flex; flex-direction: column; align-items: center; }
+      
+      .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-symbol"></div>
+        Marqs <span>Home</span>
+      </a>
+      
+      <div class="mobile-toggle" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link" onclick="toggleMenu()">Início</a></li>
+        <li><a href="#sobre" class="nav-link" onclick="toggleMenu()">A Marqs</a></li>
+        <li><a href="#produtos" class="nav-link" onclick="toggleMenu()">Produtos</a></li>
+        <li><a href="#atacado" class="nav-link" onclick="toggleMenu()">Vendas Corporativas</a></li>
+        <li><a href="#lojas" class="nav-link" onclick="toggleMenu()">Lojas Oficiais</a></li>
+        <li style="display: none;" class="nav-btn-mobile-wrapper">
+          <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" class="btn btn-primary nav-btn-mobile">Atendimento</a>
+        </li>
+      </ul>
+      
+      <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" class="btn btn-primary" id="btn-desktop-nav">
+        <i class="fa-brands fa-whatsapp"></i> Atendimento
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION COM VÍDEO DO YOUTUBE (KEFt2quibkg) -->
+  <section id="home" class="hero">
+    <div class="hero-video-container">
+      <iframe 
+        class="hero-video-iframe" 
+        src="https://www.youtube.com/embed/KEFt2quibkg?autoplay=1&mute=1&loop=1&playlist=KEFt2quibkg&controls=0&showinfo=0&autohide=1&background=1&playsinline=1" 
+        allow="autoplay; encrypted-media; picture-in-picture" 
+        frameborder="0">
+      </iframe>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content" data-aos="fade-right">
+      <h1 class="hero-title">Excelência em Importação para o <span>Seu Lar & Negócio</span></h1>
+      <p class="hero-subtitle">Há mais de 6 anos importando produtos de alto padrão com soluções práticas em Casa, Jardim, Lazer e Corporativo.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="#atacado" class="btn btn-primary">Atacado & Corporativo</a>
+        <a href="#lojas" class="btn btn-outline" style="border-color: white; color: white;">Lojas Oficiais</a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge-item">
+          <i class="fa-solid fa-box-archive"></i>
+          <div class="badge-text"><strong>+1 Milhão</strong><span>Vendas Realizadas</span></div>
+        </div>
+        <div class="badge-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div class="badge-text"><strong>6+ Anos</strong><span>De Tradição e Confiança</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container stats-section">
+    <div class="stats-grid" data-aos="fade-up">
+      <div class="stat-card">
+        <div class="stat-number">+1M</div><div class="stat-label">Produtos Entregues</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">6+</div><div class="stat-label">Anos no Mercado</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div><div class="stat-label">Garantia Corporativa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO INSTITUCIONAL -->
+  <section id="sobre" class="section-padding container">
+    <div class="about-grid">
+      <div data-aos="fade-right">
+        <span class="section-tag">Quem Somos</span>
+        <h2 class="section-title">A base forte para o seu lar e a parceira do seu negócio.</h2>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">
+          A Marqs Home se destaca no cenário do varejo online como uma empresa multinicho em constante crescimento, especializada na venda de uma ampla variedade de produtos.
+        </p>
+        <p style="color: var(--text-muted);">
+          Nossa dedicação está em oferecer soluções práticas com ótimo custo-benefício. Mantemo-nos fiéis aos nossos valores para criar e fornecer produtos que trazem conforto, design e segurança tanto para residências quanto para ambientes corporativos.
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <i class="fa-solid fa-chart-line"></i>
+            <div>
+              <h4>Crescimento Consolidado</h4>
+              <p>Com mais de 6 anos de mercado, somos uma loja oficial reconhecida nos maiores marketplaces do Brasil.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <i class="fa-solid fa-bullseye"></i>
+            <div>
+              <h4>Nosso Propósito Multinicho</h4>
+              <p>Trabalhamos focados em casa e jardim, mas sempre buscando inovar e expandir com produtos de marca própria.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visuals" data-aos="fade-left">
+        <div class="about-card">
+          <div class="logo-symbol" style="margin-bottom: 24px; width: 45px; height: 45px;"></div>
+          <h3>A Essência da Nossa Identidade</h3>
+          <p style="color: var(--text-muted); margin-bottom: 16px;">O nosso símbolo vai além da estética, ele une dois conceitos fundamentais que guiam a Marqs Home:</p>
+          <ul style="list-style: none; color: var(--text-muted); margin-bottom: 24px;">
+            <li style="margin-bottom: 12px;"><strong style="color: var(--primary-dark);">A Casa:</strong> Transmite a sensação de acolhimento, família e recepção.</li>
+            <li><strong style="color: var(--primary-dark);">O Ponto de Luz:</strong> Representa a palavra de Deus, orientando nossa visão.</li>
+          </ul>
+          <div style="background: rgba(138, 105, 212, 0.05); padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary-highlight);">
+            <p style="font-style: italic; font-weight: 600; color: var(--primary-dark); font-size: 0.95rem;">"Tudo posso naquele que me fortalece" <br><span style="color: var(--primary-highlight); font-weight: 500;">- Filipenses 4:13</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO PRODUTOS -->
+  <section id="produtos" class="section-padding" style="background: #F0F2FB;">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Nossas Linhas</span>
+        <h2 class="section-title">Produtos Importados de Alta Demanda</h2>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card" data-aos="fade-up">
+          <div class="product-icon"><i class="fa-solid fa-chair"></i></div>
+          <h3>Cadeiras & Conforto</h3>
+          <p>Design moderno e ergonômico para ambientes corporativos e home-office. <strong>Todos os modelos possuem certificação NR-17.</strong></p>
+          <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="product-icon"><i class="fa-solid fa-campground"></i></div>
+          <h3>Tendas Gazebo</h3>
+          <p>Estruturas resistentes para praia, campo, eventos e área externa corporativa.</p>
+          <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-icon"><i class="fa-solid fa-child-reaching"></i></div>
+          <h3>Camas Elásticas</h3>
+          <p>Linha infantil focada em segurança, durabilidade e diversão garantida.</p>
+          <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="product-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+          <h3>Mangueiras de Jardim</h3>
+          <p>Praticidade e resistência para irrigação e manutenção de infraestruturas.</p>
+          <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO ATACADO COM FORMULÁRIO -->
+  <section id="atacado" class="section-padding container">
+    <div class="b2b-section" data-aos="zoom-in">
+      <div class="b2b-grid">
+        <div>
+          <span class="section-tag" style="color: var(--primary-highlight);">Atacado Corporativo</span>
+          <h2>Soluções Corporativas e Atacado</h2>
+          <p style="color: #C0C1D0;">Ideal para empresas que buscam mobiliar escritórios ou atualizar o setup da equipe. Condições especiais de atacado para compras em volume direto da importadora, com estoque à pronta entrega.</p>
+          <ul class="b2b-features">
+            <li><i class="fa-solid fa-circle-check"></i> Condições especiais para CNPJ e compras em volume</li>
+            <li><i class="fa-solid fa-circle-check"></i> Cadeiras com Certificação de Ergonomia NR-17</li>
+            <li><i class="fa-solid fa-circle-check"></i> Emissão de Nota Fiscal e Garantia Nacional</li>
+          </ul>
+        </div>
+
+        <div class="b2b-form-card">
+          <h3>Solicite um Orçamento</h3>
+          <p style="color: #A0A2B8; margin-bottom: 20px; font-size: 0.95rem;">Preencha os dados abaixo para falar diretamente com a nossa Equipe de Vendas.</p>
+          <form id="b2b-form" onsubmit="event.preventDefault(); sendToWhatsapp();">
+            <input type="text" id="name" placeholder="Nome da Empresa / Comprador" required>
+            <input type="tel" id="phone" placeholder="Seu WhatsApp" required>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Solicitar Orçamento no WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOJAS OFICIAIS -->
+  <section id="lojas" class="section-padding" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Onde Estamos</span>
+        <h2 class="section-title">Nossas Lojas Oficiais</h2>
+        <p style="color: var(--text-muted);">Compre unitário pelos maiores marketplaces do Brasil com segurança total.</p>
+      </div>
+      <div class="channels-grid">
+        <div class="channel-card" data-aos="fade-up">
+          <div class="channel-logo ml-color">Mercado Livre</div>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Loja Oficial com +1 Milhão de Vendas</p>
+          <a href="https://www.mercadolivre.com.br/loja/marqs-home?client=recoview-selleritems&official_store_id=198462&category_id=MLB193945&item_id=MLB4610157945&recos_listing=true#origin=vpp" target="_blank" class="btn btn-outline" style="width: 100%;">Visitar Loja ML</a>
+        </div>
+        <div class="channel-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="channel-logo shopee-color">Shopee</div>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Loja Oficial com Entregas Rápidas</p>
+          <a href="https://shopee.com.br/marqshome?categoryId=100636&entryPoint=ShopByPDP&itemId=54318631535" target="_blank" class="btn btn-outline" style="width: 100%;">Visitar Shopee</a>
+        </div>
+        <div class="channel-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="channel-logo amazon-color">Amazon</div>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Catálogo Completo na Amazon Brasil</p>
+          <a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7&marketplaceID=A2Q3Y263D00KWC" target="_blank" class="btn btn-outline" style="width: 100%;">Visitar Amazon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="brand-logo" style="color: white;">
+          <div class="logo-symbol"></div>Marqs <span style="color: var(--primary-highlight);">Home</span>
+        </a>
+        <p>A Marqs Home é referência nacional na importação e comercialização de produtos de alta qualidade para Casa, Jardim e Linha Infantil.</p>
+      </div>
+      <div>
+        <h4 class="footer-title">Navegação</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#sobre">Quem Somos</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#atacado">Atacado Corporativo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Lojas</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.mercadolivre.com.br/loja/marqs-home" target="_blank">Mercado Livre</a></li>
+          <li><a href="https://shopee.com.br/marqshome" target="_blank">Shopee</a></li>
+          <li><a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7" target="_blank">Amazon</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Atacado & Corporativo</h4>
+        <p style="color: #A0A2B8; margin-bottom: 12px;"><i class="fa-solid fa-user"></i> Equipe de Vendas</p>
+        <p style="color: #A0A2B8; margin-bottom: 12px;"><i class="fa-solid fa-phone"></i> +55 (11) 93436-5314</p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; Marqs Home. Todos os direitos reservados. "Tudo posso naquele que me fortalece" - Filipenses 4:13</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511934365314?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento%20corporativo." class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    function sendToWhatsapp() {
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const text = `Olá Equipe de Vendas! Me chamo ${name} (Tel: ${phone}) e gostaria de um orçamento corporativo/atacado.`;
+      const url = `https://wa.me/5511934365314?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    }
+
+    function toggleMenu() {
+      if (window.innerWidth <= 768) {
+        document.getElementById('nav-menu').classList.toggle('active');
+        const btnDesktop = document.getElementById('btn-desktop-nav');
+        const btnMobileWrapper = document.querySelector('.nav-btn-mobile-wrapper');
+        
+        if(btnDesktop) btnDesktop.style.display = 'none'; 
+        if(btnMobileWrapper) {
+          btnMobileWrapper.style.display = btnMobileWrapper.style.display === 'block' ? 'none' : 'block';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
