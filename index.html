@@ -3,9 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Marqs Home | Importadora & Vendas Corporativas</title>
   
-  <meta name="description" content="Importadora líder em soluções para Casa, Jardim, Lazer e Linha Infantil. Condições especiais em atacado para empresas.">
+  <!-- =========================================
+       SEO PRINCIPAL & INDEXAÇÃO GOOGLE
+       ========================================= -->
+  <title>Marqs Home | Importadora, Atacado Corporativo & Casa e Jardim</title>
+  <meta name="description" content="Importadora oficial especialista em produtos para Casa, Jardim, Lazer e Linha Infantil. Vendas em atacado corporativo para CNPJ e varejo nos principais marketplaces.">
+  <meta name="keywords" content="Marqs Home, importadora de produtos, atacado corporativo, cadeiras ergonômicas NR-17, tendas gazebo, cama elástica infantil, mangueiras de jardim, compras CNPJ, fornecedor atacado">
+  <meta name="author" content="Marqs Home">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://www.marqshome.com.br/">
+  
+  <!-- Favicon / Ícone da Aba -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- =========================================
+       OPEN GRAPH / SEO PARA REDES SOCIAIS & WHATSAPP
+       ========================================= -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Marqs Home | Importadora & Soluções Corporativas">
+  <meta property="og:description" content="Há mais de 6 anos importando produtos de alto padrão com soluções práticas para seu lar e sua empresa. Conheça nossas linhas e condições de atacado.">
+  <meta property="og:url" content="https://www.marqshome.com.br/">
+  <meta property="og:site_name" content="Marqs Home">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logotipo Marqs Home Importadora">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marqs Home | Importadora & Soluções Corporativas">
+  <meta name="twitter:description" content="Produtos importados de alta qualidade para Casa, Jardim, Lazer e Atacado Corporativo.">
+  <meta name="twitter:image" content="logo.png">
+
+  <!-- =========================================
+       DADOS ESTRUTURADOS JSON-LD (SCHEMA.ORG PARA GOOGLE)
+       ========================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Marqs Home",
+    "altName": "Marqs Home Importadora",
+    "url": "https://www.marqshome.com.br/",
+    "logo": "https://www.marqshome.com.br/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-11-93436-5314",
+      "contactType": "sales",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    },
+    "sameAs": [
+      "https://www.mercadolivre.com.br/loja/marqs-home",
+      "https://shopee.com.br/marqshome",
+      "https://www.amazon.com.br/s?me=AJ39UHJOB0IP7"
+    ]
+  }
+  </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +139,7 @@
     .nav-btn-mobile-wrapper { display: none; }
     .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; }
 
-    /* HERO SECTION COM VÍDEO MAIS VISÍVEL */
+    /* HERO SECTION */
     .hero {
       position: relative;
       padding-top: 180px; padding-bottom: 120px;
@@ -108,7 +165,6 @@
       transform: translate(-50%, -50%);
       border: none;
     }
-    /* Filtro ajustado para dar mais visibilidade ao vídeo */
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -119,7 +175,7 @@
       position: relative;
       z-index: 2;
       max-width: 800px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra no texto para manter a leitura perfeita */
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
     .hero-title { font-size: 3.5rem; line-height: 1.15; color: var(--white); margin-bottom: 24px; }
     .hero-title span { color: #a382f0; }
@@ -207,9 +263,7 @@
     }
     .b2b-form-card input:focus { border-color: var(--primary-highlight); background: rgba(0,0,0,0.4); }
 
-    /* =========================================
-       SEÇÃO LOJAS OFICIAIS REDESENHADA (CLEAN & PREMIUM)
-       ========================================= */
+    /* LOJAS OFICIAIS */
     .official-stores-section {
       background-color: var(--bg-light);
       position: relative;
@@ -256,8 +310,7 @@
       letter-spacing: -0.03em;
     }
 
-    /* Cores das marcas refinadas e elegantes */
-    .ml-color { color: #2D3277; } /* Azul marinho corporativo do grupo ML para elegância */
+    .ml-color { color: #2D3277; }
     .shopee-color { color: #EE4D2D; }
     .amazon-color { color: #232F3E; }
 
@@ -358,40 +411,43 @@
   <!-- HEADER -->
   <header class="header">
     <div class="container nav-container">
-      <a href="#" class="brand-logo">
-        <img src="logo.png" alt="Marqs Home Logo">
+      <a href="#" class="brand-logo" title="Marqs Home - Página Inicial">
+        <img src="logo.png" alt="Logotipo Marqs Home Importadora">
       </a>
       
-      <div class="mobile-toggle" onclick="toggleMenu()">
+      <div class="mobile-toggle" onclick="toggleMenu()" aria-label="Abrir Menu de Navegação">
         <i class="fa-solid fa-bars" id="menu-icon"></i>
       </div>
 
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#home" class="nav-link" onclick="toggleMenu()">Início</a></li>
-        <li><a href="#sobre" class="nav-link" onclick="toggleMenu()">A Marqs</a></li>
-        <li><a href="#produtos" class="nav-link" onclick="toggleMenu()">Produtos</a></li>
-        <li><a href="#atacado" class="nav-link" onclick="toggleMenu()">Vendas Corporativas</a></li>
-        <li><a href="#lojas" class="nav-link" onclick="toggleMenu()">Lojas Oficiais</a></li>
-        <li class="nav-btn-mobile-wrapper">
-          <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" class="btn btn-primary nav-btn-mobile">
-            <i class="fa-brands fa-whatsapp"></i> Atendimento
-          </a>
-        </li>
-      </ul>
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link" onclick="toggleMenu()">Início</a></li>
+          <li><a href="#sobre" class="nav-link" onclick="toggleMenu()">A Marqs</a></li>
+          <li><a href="#produtos" class="nav-link" onclick="toggleMenu()">Produtos</a></li>
+          <li><a href="#atacado" class="nav-link" onclick="toggleMenu()">Vendas Corporativas</a></li>
+          <li><a href="#lojas" class="nav-link" onclick="toggleMenu()">Lojas Oficiais</a></li>
+          <li class="nav-btn-mobile-wrapper">
+            <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" rel="noopener" class="btn btn-primary nav-btn-mobile">
+              <i class="fa-brands fa-whatsapp"></i> Atendimento
+            </a>
+          </li>
+        </ul>
+      </nav>
       
-      <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" class="btn btn-primary" id="btn-desktop-nav">
+      <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" rel="noopener" class="btn btn-primary" id="btn-desktop-nav">
         <i class="fa-brands fa-whatsapp"></i> Atendimento
       </a>
     </div>
   </header>
 
-  <!-- HERO SECTION COM VÍDEO DESTACADO -->
+  <!-- HERO SECTION -->
   <section id="home" class="hero">
     <div class="hero-video-container">
       <iframe 
         class="hero-video-iframe" 
         src="https://www.youtube-nocookie.com/embed/KEFt2quibkg?autoplay=1&mute=1&loop=1&playlist=KEFt2quibkg&controls=0&showinfo=0&rel=0&enablejsapi=1" 
         allow="autoplay; encrypted-media" 
+        title="Vídeo Institucional Marqs Home"
         frameborder="0">
       </iframe>
       <div class="hero-overlay"></div>
@@ -399,7 +455,7 @@
 
     <div class="container hero-content" data-aos="fade-right">
       <h1 class="hero-title">Excelência em Importação para o <span>Seu Lar & Negócio</span></h1>
-      <p class="hero-subtitle">Há mais de 6 anos importando produtos de alto padrão com soluções práticas em Casa, Jardim, Lazer e Corporativo.</p>
+      <p class="hero-subtitle">Há mais de 6 anos importando produtos de alto padrão com soluções práticas em Casa, Jardim, Lazer e Atacado Corporativo.</p>
       <div style="display: flex; gap: 16px; flex-wrap: wrap;">
         <a href="#atacado" class="btn btn-primary">Atacado & Corporativo</a>
         <a href="#lojas" class="btn btn-outline" style="border-color: white; color: white;">Lojas Oficiais</a>
@@ -440,7 +496,7 @@
           <span class="section-tag">Quem Somos</span>
           <h2 class="section-title">A base forte para o seu lar e a parceira do seu negócio.</h2>
           <p style="color: var(--text-muted); margin-bottom: 16px;">
-            A Marqs Home se destaca no cenário do varejo online como uma empresa multinicho em constante crescimento, especializada na venda de uma ampla variedade de produtos.
+            A Marqs Home se destaca no cenário do varejo online como uma empresa multinicho em constante crescimento, especializada na importação e venda de uma ampla variedade de produtos.
           </p>
           <p style="color: var(--text-muted);">
             Nossa dedicação está em oferecer soluções práticas com ótimo custo-benefício. Mantemo-nos fiéis aos nossos valores para criar e fornecer produtos que trazem conforto, design e segurança tanto para residências quanto para ambientes corporativos.
@@ -466,7 +522,7 @@
 
         <div class="about-visuals" data-aos="fade-left">
           <div class="about-card">
-            <img src="logo.png" alt="Marqs Home Logo" class="about-card-logo">
+            <img src="logo.png" alt="Símbolo de Identidade da Marqs Home" class="about-card-logo">
             <h3>A Essência da Nossa Identidade</h3>
             <p style="color: var(--text-muted); margin-bottom: 16px;">O nosso símbolo vai além da estética, ele une dois conceitos fundamentais que guiam a Marqs Home:</p>
             <ul style="list-style: none; color: var(--text-muted); margin-bottom: 24px;">
@@ -491,30 +547,30 @@
       </div>
 
       <div class="products-grid">
-        <div class="product-card" data-aos="fade-up">
+        <article class="product-card" data-aos="fade-up">
           <div class="product-icon"><i class="fa-solid fa-chair"></i></div>
           <h3>Cadeiras & Conforto</h3>
           <p>Design moderno e ergonômico para ambientes corporativos e home-office. <strong>Todos os modelos possuem certificação NR-17.</strong></p>
           <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+        </article>
+        <article class="product-card" data-aos="fade-up" data-aos-delay="100">
           <div class="product-icon"><i class="fa-solid fa-campground"></i></div>
           <h3>Tendas Gazebo</h3>
           <p>Estruturas resistentes para praia, campo, eventos e área externa corporativa.</p>
           <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+        </article>
+        <article class="product-card" data-aos="fade-up" data-aos-delay="200">
           <div class="product-icon"><i class="fa-solid fa-child-reaching"></i></div>
           <h3>Camas Elásticas</h3>
           <p>Linha infantil focada em segurança, durabilidade e diversão garantida.</p>
           <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+        </article>
+        <article class="product-card" data-aos="fade-up" data-aos-delay="300">
           <div class="product-icon"><i class="fa-solid fa-faucet-drip"></i></div>
           <h3>Mangueiras de Jardim</h3>
           <p>Praticidade e resistência para irrigação e manutenção de infraestruturas.</p>
           <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -538,8 +594,8 @@
           <h3>Solicite um Orçamento</h3>
           <p style="color: #A0A2B8; margin-bottom: 20px; font-size: 0.95rem;">Preencha os dados abaixo para falar diretamente com a nossa Equipe de Vendas.</p>
           <form id="b2b-form" onsubmit="event.preventDefault(); sendToWhatsapp();">
-            <input type="text" id="name" placeholder="Nome da Empresa / Comprador" required>
-            <input type="tel" id="phone" placeholder="Seu WhatsApp" required>
+            <input type="text" id="name" placeholder="Nome da Empresa / Comprador" required aria-label="Nome da Empresa ou Comprador">
+            <input type="tel" id="phone" placeholder="Seu WhatsApp" required aria-label="Número de Telefone ou WhatsApp">
             <button type="submit" class="btn btn-primary" style="width: 100%;">
               Solicitar Orçamento no WhatsApp
             </button>
@@ -549,7 +605,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO LOJAS OFICIAIS (REFEITA - ESTILO CLARO & PREMIUM) -->
+  <!-- SEÇÃO LOJAS OFICIAIS -->
   <section id="lojas" class="section-padding official-stores-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
@@ -566,7 +622,7 @@
             <div class="channel-logo ml-color">Mercado Livre</div>
             <p style="color: var(--text-muted); font-size: 0.95rem;">Mais de 1 Milhão de vendas concluídas com reputação máxima.</p>
           </div>
-          <a href="https://www.mercadolivre.com.br/loja/marqs-home?client=recoview-selleritems&official_store_id=198462&category_id=MLB193945&item_id=MLB4610157945&recos_listing=true#origin=vpp" target="_blank" class="btn btn-store">
+          <a href="https://www.mercadolivre.com.br/loja/marqs-home?client=recoview-selleritems&official_store_id=198462&category_id=MLB193945&item_id=MLB4610157945&recos_listing=true#origin=vpp" target="_blank" rel="noopener" class="btn btn-store">
             Visitar Loja ML <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
           </a>
         </div>
@@ -578,7 +634,7 @@
             <div class="channel-logo shopee-color">Shopee</div>
             <p style="color: var(--text-muted); font-size: 0.95rem;">Catálogo completo com ofertas exclusivas e frete ágil.</p>
           </div>
-          <a href="https://shopee.com.br/marqshome?categoryId=100636&entryPoint=ShopByPDP&itemId=54318631535" target="_blank" class="btn btn-store">
+          <a href="https://shopee.com.br/marqshome?categoryId=100636&entryPoint=ShopByPDP&itemId=54318631535" target="_blank" rel="noopener" class="btn btn-store">
             Visitar Shopee <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
           </a>
         </div>
@@ -590,7 +646,7 @@
             <div class="channel-logo amazon-color">Amazon</div>
             <p style="color: var(--text-muted); font-size: 0.95rem;">Qualidade e conveniência na maior plataforma global.</p>
           </div>
-          <a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7&marketplaceID=A2Q3Y263D00KWC" target="_blank" class="btn btn-store">
+          <a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7&marketplaceID=A2Q3Y263D00KWC" target="_blank" rel="noopener" class="btn btn-store">
             Visitar Amazon <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
           </a>
         </div>
@@ -602,7 +658,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Marqs Home Logo" style="height: 45px; width: auto; margin-bottom: 15px; filter: brightness(0) invert(1);">
+        <img src="logo.png" alt="Marqs Home Logo Rodapé" style="height: 45px; width: auto; margin-bottom: 15px; filter: brightness(0) invert(1);">
         <p>A Marqs Home é referência nacional na importação e comercialização de produtos de alta qualidade para Casa, Jardim e Linha Infantil.</p>
       </div>
       <div>
@@ -617,9 +673,9 @@
       <div>
         <h4 class="footer-title">Lojas</h4>
         <ul class="footer-links">
-          <li><a href="https://www.mercadolivre.com.br/loja/marqs-home" target="_blank">Mercado Livre</a></li>
-          <li><a href="https://shopee.com.br/marqshome" target="_blank">Shopee</a></li>
-          <li><a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7" target="_blank">Amazon</a></li>
+          <li><a href="https://www.mercadolivre.com.br/loja/marqs-home" target="_blank" rel="noopener">Mercado Livre</a></li>
+          <li><a href="https://shopee.com.br/marqshome" target="_blank" rel="noopener">Shopee</a></li>
+          <li><a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7" target="_blank" rel="noopener">Amazon</a></li>
         </ul>
       </div>
       <div>
@@ -633,7 +689,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/5511934365314?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento%20corporativo." class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/5511934365314?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento%20corporativo." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
