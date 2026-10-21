@@ -82,7 +82,7 @@
     .nav-btn-mobile-wrapper { display: none; }
     .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; }
 
-    /* HERO SECTION COM VÍDEO YOUTUBE IFRAME */
+    /* HERO SECTION COM VÍDEO MAIS VISÍVEL */
     .hero {
       position: relative;
       padding-top: 180px; padding-bottom: 120px;
@@ -108,26 +108,28 @@
       transform: translate(-50%, -50%);
       border: none;
     }
+    /* Filtro ajustado para dar mais visibilidade ao vídeo */
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(30, 28, 60, 0.85) 0%, rgba(45, 42, 86, 0.78) 100%);
+      background: linear-gradient(135deg, rgba(30, 28, 60, 0.35) 0%, rgba(18, 17, 36, 0.45) 100%);
       z-index: 1;
     }
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 800px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra no texto para manter a leitura perfeita */
     }
     .hero-title { font-size: 3.5rem; line-height: 1.15; color: var(--white); margin-bottom: 24px; }
-    .hero-title span { color: var(--primary-highlight); }
-    .hero-subtitle { font-size: 1.2rem; color: #E0E1F0; margin-bottom: 36px; max-width: 650px; }
+    .hero-title span { color: #a382f0; }
+    .hero-subtitle { font-size: 1.2rem; color: #F0F1FA; margin-bottom: 36px; max-width: 650px; font-weight: 500; }
     
-    .hero-badges { display: flex; gap: 30px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 28px; }
+    .hero-badges { display: flex; gap: 30px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.25); padding-top: 28px; }
     .badge-item { display: flex; align-items: center; gap: 12px; }
-    .badge-item i { font-size: 2rem; color: var(--primary-highlight); }
+    .badge-item i { font-size: 2rem; color: #a382f0; }
     .badge-text strong { display: block; font-size: 1.3rem; color: var(--white); }
-    .badge-text span { font-size: 0.9rem; color: #C0C2D8; }
+    .badge-text span { font-size: 0.9rem; color: #E0E2F5; }
 
     /* STATS */
     .stats-section { margin-top: -50px; position: relative; z-index: 10; }
@@ -205,35 +207,34 @@
     }
     .b2b-form-card input:focus { border-color: var(--primary-highlight); background: rgba(0,0,0,0.4); }
 
-    /* LOJAS OFICIAIS */
+    /* =========================================
+       SEÇÃO LOJAS OFICIAIS REDESENHADA (CLEAN & PREMIUM)
+       ========================================= */
     .official-stores-section {
-      background: linear-gradient(180deg, #121124 0%, #1E1C3C 100%);
-      color: var(--white);
+      background-color: var(--bg-light);
       position: relative;
     }
 
     .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
     
     .channel-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 40px 30px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 45px 35px;
       text-align: center;
       transition: var(--transition);
-      backdrop-filter: blur(10px);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      position: relative;
+      box-shadow: 0 10px 30px rgba(30, 28, 60, 0.04);
     }
 
     .channel-card:hover {
       transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(138, 105, 212, 0.4);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: var(--primary-highlight);
+      box-shadow: 0 20px 40px rgba(138, 105, 212, 0.15);
     }
 
     .channel-badge {
@@ -241,43 +242,35 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #C0C1D0;
-      margin-bottom: 24px;
+      background: rgba(138, 105, 212, 0.08);
+      color: var(--primary-highlight);
+      margin-bottom: 28px;
     }
 
     .channel-logo {
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 800;
       margin-bottom: 12px;
       letter-spacing: -0.03em;
     }
 
-    .ml-color {
-      color: #f7d02c;
-      text-shadow: 0 4px 20px rgba(247, 208, 44, 0.25);
-    }
-    .shopee-color {
-      color: #ff5722;
-      text-shadow: 0 4px 20px rgba(255, 87, 34, 0.25);
-    }
-    .amazon-color {
-      color: #ff9900;
-      text-shadow: 0 4px 20px rgba(255, 153, 0, 0.25);
-    }
+    /* Cores das marcas refinadas e elegantes */
+    .ml-color { color: #2D3277; } /* Azul marinho corporativo do grupo ML para elegância */
+    .shopee-color { color: #EE4D2D; }
+    .amazon-color { color: #232F3E; }
 
     .btn-store {
       width: 100%;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.05);
-      margin-top: 24px;
+      border: 2px solid var(--primary-dark);
+      color: var(--primary-dark);
+      background: transparent;
+      margin-top: 28px;
+      font-weight: 700;
     }
     .btn-store:hover {
-      background: var(--primary-highlight);
-      border-color: var(--primary-highlight);
+      background: var(--primary-dark);
       color: var(--white);
     }
 
@@ -392,7 +385,7 @@
     </div>
   </header>
 
-  <!-- HERO SECTION COM VÍDEO EMBED DO YOUTUBE (KEFt2quibkg) -->
+  <!-- HERO SECTION COM VÍDEO DESTACADO -->
   <section id="home" class="hero">
     <div class="hero-video-container">
       <iframe 
@@ -556,49 +549,49 @@
     </div>
   </section>
 
-  <!-- SEÇÃO LOJAS OFICIAIS -->
+  <!-- SEÇÃO LOJAS OFICIAIS (REFEITA - ESTILO CLARO & PREMIUM) -->
   <section id="lojas" class="section-padding official-stores-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Canais de Venda Varejo</span>
-        <h2 class="section-title" style="color: var(--white);">Nossas Lojas Oficiais</h2>
-        <p style="color: #A0A2B8;">Adquira nossos produtos unitários através dos maiores marketplaces do país com entrega rápida e garantia total.</p>
+        <h2 class="section-title">Nossas Lojas Oficiais</h2>
+        <p style="color: var(--text-muted);">Adquira nossos produtos unitários através dos maiores marketplaces do país com entrega rápida e garantia total.</p>
       </div>
 
       <div class="channels-grid">
         <!-- Mercado Livre -->
         <div class="channel-card" data-aos="fade-up">
           <div>
-            <span class="channel-badge"><i class="fa-solid fa-store"></i> Loja Oficial</span>
+            <span class="channel-badge"><i class="fa-solid fa-check-double"></i> Loja Oficial</span>
             <div class="channel-logo ml-color">Mercado Livre</div>
-            <p style="color: #A0A2B8; font-size: 0.95rem;">Mais de 1 Milhão de vendas concluídas com reputação máxima.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Mais de 1 Milhão de vendas concluídas com reputação máxima.</p>
           </div>
           <a href="https://www.mercadolivre.com.br/loja/marqs-home?client=recoview-selleritems&official_store_id=198462&category_id=MLB193945&item_id=MLB4610157945&recos_listing=true#origin=vpp" target="_blank" class="btn btn-store">
-            Acessar Loja ML <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+            Visitar Loja ML <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
           </a>
         </div>
 
         <!-- Shopee -->
         <div class="channel-card" data-aos="fade-up" data-aos-delay="100">
           <div>
-            <span class="channel-badge"><i class="fa-solid fa-store"></i> Loja Oficial</span>
+            <span class="channel-badge"><i class="fa-solid fa-check-double"></i> Loja Oficial</span>
             <div class="channel-logo shopee-color">Shopee</div>
-            <p style="color: #A0A2B8; font-size: 0.95rem;">Catálogo completo com ofertas exclusivas e frete ágil.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Catálogo completo com ofertas exclusivas e frete ágil.</p>
           </div>
           <a href="https://shopee.com.br/marqshome?categoryId=100636&entryPoint=ShopByPDP&itemId=54318631535" target="_blank" class="btn btn-store">
-            Acessar Shopee <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+            Visitar Shopee <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
           </a>
         </div>
 
         <!-- Amazon -->
         <div class="channel-card" data-aos="fade-up" data-aos-delay="200">
           <div>
-            <span class="channel-badge"><i class="fa-solid fa-store"></i> Loja Oficial</span>
+            <span class="channel-badge"><i class="fa-solid fa-check-double"></i> Loja Oficial</span>
             <div class="channel-logo amazon-color">Amazon</div>
-            <p style="color: #A0A2B8; font-size: 0.95rem;">Qualidade e conveniência na maior plataforma global.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Qualidade e conveniência na maior plataforma global.</p>
           </div>
           <a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7&marketplaceID=A2Q3Y263D00KWC" target="_blank" class="btn btn-store">
-            Acessar Amazon <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+            Visitar Amazon <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
           </a>
         </div>
       </div>
