@@ -57,7 +57,7 @@
     .btn-outline { border: 2px solid var(--primary-dark); color: var(--primary-dark); background: transparent; }
     .btn-outline:hover { background: var(--primary-dark); color: var(--white); transform: translateY(-3px); }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; }
 
     /* HEADER */
     .header {
@@ -82,13 +82,13 @@
     .nav-btn-mobile-wrapper { display: none; }
     .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; }
 
-    /* HERO SECTION */
+    /* HERO SECTION COM VÍDEO SEM BUG */
     .hero {
       position: relative;
       padding-top: 180px; padding-bottom: 120px;
       color: var(--white);
       overflow: hidden;
-      min-height: 80vh;
+      min-height: 85vh;
       display: flex;
       align-items: center;
       background: var(--primary-dark);
@@ -100,17 +100,18 @@
       pointer-events: none;
       overflow: hidden;
     }
-
     .hero-video-element {
-      width: 100%; height: 100%;
+      position: absolute;
+      top: 50%; left: 50%;
+      min-width: 100%; min-height: 100%;
+      width: auto; height: auto;
+      transform: translate(-50%, -50%);
       object-fit: cover;
     }
-
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      /* Ajuste da transparência do filtro aqui */
-      background: linear-gradient(135deg, rgba(30, 28, 60, 0.88) 0%, rgba(45, 42, 86, 0.82) 100%);
+      background: linear-gradient(135deg, rgba(30, 28, 60, 0.85) 0%, rgba(45, 42, 86, 0.78) 100%);
       z-index: 1;
     }
     .hero-content {
@@ -140,7 +141,7 @@
     .stat-number { font-size: 2.8rem; font-weight: 800; color: var(--primary-highlight); margin-bottom: 4px; }
     .stat-label { color: var(--text-muted); font-weight: 500; }
 
-    /* INSTITUCIONAL */
+    /* INSTITUCIONAL (QUEM SOMOS) */
     .section-padding { padding: 100px 0; }
     .section-tag {
       text-transform: uppercase; font-size: 0.85rem; font-weight: 700;
@@ -154,6 +155,7 @@
     .about-feature i {
       font-size: 1.4rem; color: var(--primary-highlight); 
       background: rgba(138, 105, 212, 0.1); padding: 14px; border-radius: 12px;
+      flex-shrink: 0;
     }
     .about-feature h4 { margin-bottom: 6px; font-size: 1.15rem; }
     .about-feature p { color: var(--text-muted); font-size: 0.95rem; }
@@ -165,7 +167,7 @@
     .about-card-logo { height: 50px; width: auto; margin-bottom: 20px; object-fit: contain; }
     .about-card h3 { font-size: 1.4rem; margin-bottom: 16px; }
 
-    /* PRODUCTS */
+    /* PRODUTOS */
     .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px auto; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
     .product-card {
@@ -203,20 +205,87 @@
     }
     .b2b-form-card input:focus { border-color: var(--primary-highlight); background: rgba(0,0,0,0.4); }
 
-    /* CHANNELS */
-    .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-    .channel-card {
-      background: var(--white); border-radius: 16px; padding: 40px 30px;
-      text-align: center; border: 1px solid var(--border-color); transition: var(--transition);
+    /* =========================================
+       SEÇÃO LOJAS OFICIAIS REDESENHADA (SÓBRIA & PREMIUM)
+       ========================================= */
+    .official-stores-section {
+      background: linear-gradient(180deg, #121124 0%, #1E1C3C 100%);
+      color: var(--white);
+      position: relative;
     }
-    .channel-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-    .channel-logo { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
-    .ml-color { color: #FFE600; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
-    .shopee-color { color: #EE4D2D; }
-    .amazon-color { color: #FF9900; }
+
+    .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    
+    .channel-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .channel-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(138, 105, 212, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .channel-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #C0C1D0;
+      margin-bottom: 24px;
+    }
+
+    .channel-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    /* Cores Sóbrias e Ajustadas */
+    .ml-color {
+      color: #f7d02c;
+      text-shadow: 0 4px 20px rgba(247, 208, 44, 0.25);
+    }
+    .shopee-color {
+      color: #ff5722;
+      text-shadow: 0 4px 20px rgba(255, 87, 34, 0.25);
+    }
+    .amazon-color {
+      color: #ff9900;
+      text-shadow: 0 4px 20px rgba(255, 153, 0, 0.25);
+    }
+
+    .btn-store {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.05);
+      margin-top: 24px;
+    }
+    .btn-store:hover {
+      background: var(--primary-highlight);
+      border-color: var(--primary-highlight);
+      color: var(--white);
+    }
 
     /* FOOTER */
-    .footer { background: var(--primary-dark); color: var(--white); padding: 80px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+    .footer { background: #0E0D1F; color: var(--white); padding: 80px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; }
     .footer-title { color: var(--white); font-size: 1.1rem; margin-bottom: 24px; }
     .footer-links { list-style: none; }
@@ -247,13 +316,12 @@
     }
 
     @media (max-width: 768px) {
+      .container { padding: 0 20px; }
       .header { padding: 5px 0; }
       .brand-logo img { height: 38px; }
       
-      /* Oculta botão de atendimento padrão do header no mobile */
       #btn-desktop-nav { display: none !important; }
       
-      /* Configuração do Menu Mobile */
       .nav-menu {
         position: absolute; top: 80px; left: 0; width: 100%;
         background: var(--white); flex-direction: column; gap: 0;
@@ -264,7 +332,6 @@
       .nav-menu li { width: 100%; text-align: left; border-bottom: 1px solid var(--bg-light); }
       .nav-link { display: block; padding: 16px 24px; width: 100%; }
       
-      /* Exibe botão de atendimento dentro da lista quando o menu é aberto */
       .nav-btn-mobile-wrapper { display: block; padding: 16px 24px; border-bottom: none !important; }
       .nav-btn-mobile { width: 100%; text-align: center; }
 
@@ -277,11 +344,11 @@
       
       .btn { width: 100%; justify-content: center; }
       
-      .section-padding { padding: 50px 0; }
+      .section-padding { padding: 60px 0; }
       .section-title { font-size: 1.8rem; line-height: 1.25; }
       
-      /* Otimização do Texto da Seção Quem Somos no Mobile */
-      .about-grid { gap: 36px; }
+      /* Otimização da Seção Quem Somos no Mobile */
+      .about-grid { gap: 36px; grid-template-columns: 1fr; }
       .about-features { gap: 18px; margin-top: 20px; }
       .about-feature i { padding: 12px; font-size: 1.2rem; }
       .about-card { padding: 24px; border-radius: 18px; }
@@ -376,47 +443,49 @@
   </section>
 
   <!-- SEÇÃO INSTITUCIONAL (QUEM SOMOS) -->
-  <section id="sobre" class="section-padding container">
-    <div class="about-grid">
-      <div data-aos="fade-right">
-        <span class="section-tag">Quem Somos</span>
-        <h2 class="section-title">A base forte para o seu lar e a parceira do seu negócio.</h2>
-        <p style="color: var(--text-muted); margin-bottom: 16px;">
-          A Marqs Home se destaca no cenário do varejo online como uma empresa multinicho em constante crescimento, especializada na venda de uma ampla variedade de produtos.
-        </p>
-        <p style="color: var(--text-muted);">
-          Nossa dedicação está em oferecer soluções práticas com ótimo custo-benefício. Mantemo-nos fiéis aos nossos valores para criar e fornecer produtos que trazem conforto, design e segurança tanto para residências quanto para ambientes corporativos.
-        </p>
+  <section id="sobre" class="section-padding">
+    <div class="container">
+      <div class="about-grid">
+        <div data-aos="fade-right">
+          <span class="section-tag">Quem Somos</span>
+          <h2 class="section-title">A base forte para o seu lar e a parceira do seu negócio.</h2>
+          <p style="color: var(--text-muted); margin-bottom: 16px;">
+            A Marqs Home se destaca no cenário do varejo online como uma empresa multinicho em constante crescimento, especializada na venda de uma ampla variedade de produtos.
+          </p>
+          <p style="color: var(--text-muted);">
+            Nossa dedicação está em oferecer soluções práticas com ótimo custo-benefício. Mantemo-nos fiéis aos nossos valores para criar e fornecer produtos que trazem conforto, design e segurança tanto para residências quanto para ambientes corporativos.
+          </p>
 
-        <div class="about-features">
-          <div class="about-feature">
-            <i class="fa-solid fa-chart-line"></i>
-            <div>
-              <h4>Crescimento Consolidado</h4>
-              <p>Com mais de 6 anos de mercado, somos uma loja oficial reconhecida nos maiores marketplaces do Brasil.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <i class="fa-solid fa-chart-line"></i>
+              <div>
+                <h4>Crescimento Consolidado</h4>
+                <p>Com mais de 6 anos de mercado, somos uma loja oficial reconhecida nos maiores marketplaces do Brasil.</p>
+              </div>
             </div>
-          </div>
-          <div class="about-feature">
-            <i class="fa-solid fa-bullseye"></i>
-            <div>
-              <h4>Nosso Propósito Multinicho</h4>
-              <p>Trabalhamos focados em casa e jardim, mas sempre buscando inovar e expandir com produtos de marca própria.</p>
+            <div class="about-feature">
+              <i class="fa-solid fa-bullseye"></i>
+              <div>
+                <h4>Nosso Propósito Multinicho</h4>
+                <p>Trabalhamos focados em casa e jardim, mas sempre buscando inovar e expandir com produtos de marca própria.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="about-visuals" data-aos="fade-left">
-        <div class="about-card">
-          <img src="logo.png" alt="Marqs Home Logo" class="about-card-logo">
-          <h3>A Essência da Nossa Identidade</h3>
-          <p style="color: var(--text-muted); margin-bottom: 16px;">O nosso símbolo vai além da estética, ele une dois conceitos fundamentais que guiam a Marqs Home:</p>
-          <ul style="list-style: none; color: var(--text-muted); margin-bottom: 24px;">
-            <li style="margin-bottom: 12px;"><strong style="color: var(--primary-dark);">A Casa:</strong> Transmite a sensação de acolhimento, família e recepção.</li>
-            <li><strong style="color: var(--primary-dark);">O Ponto de Luz:</strong> Representa a palavra de Deus, orientando nossa visão.</li>
-          </ul>
-          <div style="background: rgba(138, 105, 212, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid var(--primary-highlight);">
-            <p style="font-style: italic; font-weight: 600; color: var(--primary-dark); font-size: 0.95rem;">"Tudo posso naquele que me fortalece" <br><span style="color: var(--primary-highlight); font-weight: 500;">- Filipenses 4:13</span></p>
+        <div class="about-visuals" data-aos="fade-left">
+          <div class="about-card">
+            <img src="logo.png" alt="Marqs Home Logo" class="about-card-logo">
+            <h3>A Essência da Nossa Identidade</h3>
+            <p style="color: var(--text-muted); margin-bottom: 16px;">O nosso símbolo vai além da estética, ele une dois conceitos fundamentais que guiam a Marqs Home:</p>
+            <ul style="list-style: none; color: var(--text-muted); margin-bottom: 24px;">
+              <li style="margin-bottom: 12px;"><strong style="color: var(--primary-dark);">A Casa:</strong> Transmite a sensação de acolhimento, família e recepção.</li>
+              <li><strong style="color: var(--primary-dark);">O Ponto de Luz:</strong> Representa a palavra de Deus, orientando nossa visão.</li>
+            </ul>
+            <div style="background: rgba(138, 105, 212, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid var(--primary-highlight);">
+              <p style="font-style: italic; font-weight: 600; color: var(--primary-dark); font-size: 0.95rem;">"Tudo posso naquele que me fortalece" <br><span style="color: var(--primary-highlight); font-weight: 500;">- Filipenses 4:13</span></p>
+            </div>
           </div>
         </div>
       </div>
@@ -490,29 +559,50 @@
     </div>
   </section>
 
-  <!-- LOJAS OFICIAIS -->
-  <section id="lojas" class="section-padding" style="background: var(--white);">
+  <!-- SEÇÃO LOJAS OFICIAIS (NOVO DESIGN LUXO SÓBRIO) -->
+  <section id="lojas" class="section-padding official-stores-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Onde Estamos</span>
-        <h2 class="section-title">Nossas Lojas Oficiais</h2>
-        <p style="color: var(--text-muted);">Compre unitário pelos maiores marketplaces do Brasil com segurança total.</p>
+        <span class="section-tag">Canais de Venda Varejo</span>
+        <h2 class="section-title" style="color: var(--white);">Nossas Lojas Oficiais</h2>
+        <p style="color: #A0A2B8;">Adquira nossos produtos unitários através dos maiores marketplaces do país com entrega rápida e garantia total.</p>
       </div>
+
       <div class="channels-grid">
+        <!-- Mercado Livre -->
         <div class="channel-card" data-aos="fade-up">
-          <div class="channel-logo ml-color">Mercado Livre</div>
-          <p style="color: var(--text-muted); margin-bottom: 20px;">Loja Oficial com +1 Milhão de Vendas</p>
-          <a href="https://www.mercadolivre.com.br/loja/marqs-home?client=recoview-selleritems&official_store_id=198462&category_id=MLB193945&item_id=MLB4610157945&recos_listing=true#origin=vpp" target="_blank" class="btn btn-outline" style="width: 100%;">Visitar Loja ML</a>
+          <div>
+            <span class="channel-badge"><i class="fa-solid fa-store"></i> Loja Oficial</span>
+            <div class="channel-logo ml-color">Mercado Livre</div>
+            <p style="color: #A0A2B8; font-size: 0.95rem;">Mais de 1 Milhão de vendas concluídas com reputação máxima.</p>
+          </div>
+          <a href="https://www.mercadolivre.com.br/loja/marqs-home?client=recoview-selleritems&official_store_id=198462&category_id=MLB193945&item_id=MLB4610157945&recos_listing=true#origin=vpp" target="_blank" class="btn btn-store">
+            Acessar Loja ML <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+          </a>
         </div>
+
+        <!-- Shopee -->
         <div class="channel-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="channel-logo shopee-color">Shopee</div>
-          <p style="color: var(--text-muted); margin-bottom: 20px;">Loja Oficial com Entregas Rápidas</p>
-          <a href="https://shopee.com.br/marqshome?categoryId=100636&entryPoint=ShopByPDP&itemId=54318631535" target="_blank" class="btn btn-outline" style="width: 100%;">Visitar Shopee</a>
+          <div>
+            <span class="channel-badge"><i class="fa-solid fa-store"></i> Loja Oficial</span>
+            <div class="channel-logo shopee-color">Shopee</div>
+            <p style="color: #A0A2B8; font-size: 0.95rem;">Catálogo completo com ofertas exclusivas e frete ágil.</p>
+          </div>
+          <a href="https://shopee.com.br/marqshome?categoryId=100636&entryPoint=ShopByPDP&itemId=54318631535" target="_blank" class="btn btn-store">
+            Acessar Shopee <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+          </a>
         </div>
+
+        <!-- Amazon -->
         <div class="channel-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="channel-logo amazon-color">Amazon</div>
-          <p style="color: var(--text-muted); margin-bottom: 20px;">Catálogo Completo na Amazon Brasil</p>
-          <a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7&marketplaceID=A2Q3Y263D00KWC" target="_blank" class="btn btn-outline" style="width: 100%;">Visitar Amazon</a>
+          <div>
+            <span class="channel-badge"><i class="fa-solid fa-store"></i> Loja Oficial</span>
+            <div class="channel-logo amazon-color">Amazon</div>
+            <p style="color: #A0A2B8; font-size: 0.95rem;">Qualidade e conveniência na maior plataforma global.</p>
+          </div>
+          <a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7&marketplaceID=A2Q3Y263D00KWC" target="_blank" class="btn btn-store">
+            Acessar Amazon <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+          </a>
         </div>
       </div>
     </div>
