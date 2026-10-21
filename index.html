@@ -66,13 +66,9 @@
       border-bottom: 1px solid var(--border-color); transition: var(--transition);
     }
     .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-    .brand-logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--primary-dark); }
-    .logo-symbol {
-      width: 38px; height: 38px; background: var(--primary-highlight);
-      clip-path: polygon(50% 0%, 100% 35%, 80% 35%, 80% 100%, 20% 100%, 20% 35%, 0% 35%);
-      border-radius: 4px;
-    }
-    .brand-logo span { color: var(--primary-highlight); }
+    
+    .brand-logo { display: flex; align-items: center; gap: 12px; }
+    .brand-logo img { height: 45px; width: auto; object-fit: contain; }
     
     .nav-menu { display: flex; gap: 32px; list-style: none; align-items: center; }
     .nav-link { font-weight: 500; color: var(--primary-dark); transition: var(--transition); position: relative; }
@@ -83,9 +79,10 @@
     }
     .nav-link:hover::after { width: 100%; }
     
+    .nav-btn-mobile-wrapper { display: none; }
     .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; }
 
-    /* HERO SECTION COM VÍDEO DO YOUTUBE */
+    /* HERO SECTION */
     .hero {
       position: relative;
       padding-top: 180px; padding-bottom: 120px;
@@ -103,18 +100,17 @@
       pointer-events: none;
       overflow: hidden;
     }
-    .hero-video-iframe {
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 100vw; height: 56.25vw;
-      min-height: 100vh; min-width: 177.77vh;
-      transform: translate(-50%, -50%);
-      border: none;
+
+    .hero-video-element {
+      width: 100%; height: 100%;
+      object-fit: cover;
     }
+
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(30, 28, 60, 0.5) 30%, rgba(45, 42, 86, 0.4) 100%);
+      /* Ajuste da transparência do filtro aqui */
+      background: linear-gradient(135deg, rgba(30, 28, 60, 0.88) 0%, rgba(45, 42, 86, 0.82) 100%);
       z-index: 1;
     }
     .hero-content {
@@ -166,6 +162,7 @@
       background: var(--white); border: 1px solid var(--border-color);
       border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(30, 28, 60, 0.06);
     }
+    .about-card-logo { height: 50px; width: auto; margin-bottom: 20px; object-fit: contain; }
     .about-card h3 { font-size: 1.4rem; margin-bottom: 16px; }
 
     /* PRODUCTS */
@@ -237,7 +234,9 @@
     }
     .whatsapp-float:hover { transform: scale(1.1); }
 
-    /* OTIMIZAÇÃO RESPONSIVA */
+    /* =========================================
+       AJUSTES RESPONSIVOS MOBILE / TABLET
+       ========================================= */
     @media (max-width: 992px) {
       .hero-title { font-size: 2.8rem; }
       .b2b-grid, .about-grid { grid-template-columns: 1fr; }
@@ -249,17 +248,26 @@
 
     @media (max-width: 768px) {
       .header { padding: 5px 0; }
+      .brand-logo img { height: 38px; }
+      
+      /* Oculta botão de atendimento padrão do header no mobile */
+      #btn-desktop-nav { display: none !important; }
+      
+      /* Configuração do Menu Mobile */
       .nav-menu {
         position: absolute; top: 80px; left: 0; width: 100%;
         background: var(--white); flex-direction: column; gap: 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-top: 1px solid var(--border-color);
-        max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-top: 1px solid var(--border-color);
+        max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .nav-menu.active { max-height: 400px; }
+      .nav-menu.active { max-height: 480px; }
       .nav-menu li { width: 100%; text-align: left; border-bottom: 1px solid var(--bg-light); }
-      .nav-link { display: block; padding: 18px 24px; width: 100%; }
-      .nav-btn-mobile { margin: 15px 24px; width: calc(100% - 48px); text-align: center; }
+      .nav-link { display: block; padding: 16px 24px; width: 100%; }
       
+      /* Exibe botão de atendimento dentro da lista quando o menu é aberto */
+      .nav-btn-mobile-wrapper { display: block; padding: 16px 24px; border-bottom: none !important; }
+      .nav-btn-mobile { width: 100%; text-align: center; }
+
       .mobile-toggle { display: block; }
       
       .hero { padding-top: 140px; padding-bottom: 80px; text-align: center; }
@@ -267,14 +275,19 @@
       .hero-subtitle { margin: 0 auto 30px auto; font-size: 1rem; }
       .hero-badges { justify-content: center; flex-wrap: wrap; gap: 15px; }
       
-      .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
+      .btn { width: 100%; justify-content: center; }
       
-      .section-padding { padding: 60px 0; }
-      .section-title { font-size: 1.8rem; }
+      .section-padding { padding: 50px 0; }
+      .section-title { font-size: 1.8rem; line-height: 1.25; }
       
-      .about-card { padding: 30px 20px; }
+      /* Otimização do Texto da Seção Quem Somos no Mobile */
+      .about-grid { gap: 36px; }
+      .about-features { gap: 18px; margin-top: 20px; }
+      .about-feature i { padding: 12px; font-size: 1.2rem; }
+      .about-card { padding: 24px; border-radius: 18px; }
+      .about-card-logo { height: 40px; margin-bottom: 16px; }
       
-      .b2b-section { padding: 40px 24px; border-radius: 20px; }
+      .b2b-section { padding: 40px 20px; border-radius: 20px; }
       .b2b-section h2 { font-size: 1.8rem; text-align: center; }
       .b2b-features li { justify-content: flex-start; text-align: left; font-size: 0.95rem; }
       .b2b-form-card { padding: 24px; }
@@ -288,15 +301,15 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="container nav-container">
       <a href="#" class="brand-logo">
-        <div class="logo-symbol"></div>
-        Marqs <span>Home</span>
+        <img src="logo.png" alt="Marqs Home Logo">
       </a>
       
       <div class="mobile-toggle" onclick="toggleMenu()">
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
       </div>
 
       <ul class="nav-menu" id="nav-menu">
@@ -305,8 +318,10 @@
         <li><a href="#produtos" class="nav-link" onclick="toggleMenu()">Produtos</a></li>
         <li><a href="#atacado" class="nav-link" onclick="toggleMenu()">Vendas Corporativas</a></li>
         <li><a href="#lojas" class="nav-link" onclick="toggleMenu()">Lojas Oficiais</a></li>
-        <li style="display: none;" class="nav-btn-mobile-wrapper">
-          <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" class="btn btn-primary nav-btn-mobile">Atendimento</a>
+        <li class="nav-btn-mobile-wrapper">
+          <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" class="btn btn-primary nav-btn-mobile">
+            <i class="fa-brands fa-whatsapp"></i> Atendimento
+          </a>
         </li>
       </ul>
       
@@ -316,15 +331,12 @@
     </div>
   </header>
 
-  <!-- HERO SECTION COM VÍDEO DO YOUTUBE (KEFt2quibkg) -->
+  <!-- HERO SECTION COM VÍDEO -->
   <section id="home" class="hero">
     <div class="hero-video-container">
-      <iframe 
-        class="hero-video-iframe" 
-        src="https://www.youtube.com/embed/KEFt2quibkg?autoplay=1&mute=1&loop=1&playlist=KEFt2quibkg&controls=0&showinfo=0&autohide=1&background=1&playsinline=1" 
-        allow="autoplay; encrypted-media; picture-in-picture" 
-        frameborder="0">
-      </iframe>
+      <video autoplay loop muted playsinline class="hero-video-element">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-office-space-with-desks-and-chairs-41551-large.mp4" type="video/mp4">
+      </video>
       <div class="hero-overlay"></div>
     </div>
 
@@ -348,6 +360,7 @@
     </div>
   </section>
 
+  <!-- ESTATÍSTICAS -->
   <section class="container stats-section">
     <div class="stats-grid" data-aos="fade-up">
       <div class="stat-card">
@@ -362,7 +375,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO INSTITUCIONAL -->
+  <!-- SEÇÃO INSTITUCIONAL (QUEM SOMOS) -->
   <section id="sobre" class="section-padding container">
     <div class="about-grid">
       <div data-aos="fade-right">
@@ -395,14 +408,14 @@
 
       <div class="about-visuals" data-aos="fade-left">
         <div class="about-card">
-          <div class="logo-symbol" style="margin-bottom: 24px; width: 45px; height: 45px;"></div>
+          <img src="logo.png" alt="Marqs Home Logo" class="about-card-logo">
           <h3>A Essência da Nossa Identidade</h3>
           <p style="color: var(--text-muted); margin-bottom: 16px;">O nosso símbolo vai além da estética, ele une dois conceitos fundamentais que guiam a Marqs Home:</p>
           <ul style="list-style: none; color: var(--text-muted); margin-bottom: 24px;">
             <li style="margin-bottom: 12px;"><strong style="color: var(--primary-dark);">A Casa:</strong> Transmite a sensação de acolhimento, família e recepção.</li>
             <li><strong style="color: var(--primary-dark);">O Ponto de Luz:</strong> Representa a palavra de Deus, orientando nossa visão.</li>
           </ul>
-          <div style="background: rgba(138, 105, 212, 0.05); padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary-highlight);">
+          <div style="background: rgba(138, 105, 212, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid var(--primary-highlight);">
             <p style="font-style: italic; font-weight: 600; color: var(--primary-dark); font-size: 0.95rem;">"Tudo posso naquele que me fortalece" <br><span style="color: var(--primary-highlight); font-weight: 500;">- Filipenses 4:13</span></p>
           </div>
         </div>
@@ -505,12 +518,11 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#" class="brand-logo" style="color: white;">
-          <div class="logo-symbol"></div>Marqs <span style="color: var(--primary-highlight);">Home</span>
-        </a>
+        <img src="logo.png" alt="Marqs Home Logo" style="height: 45px; width: auto; margin-bottom: 15px; filter: brightness(0) invert(1);">
         <p>A Marqs Home é referência nacional na importação e comercialização de produtos de alta qualidade para Casa, Jardim e Linha Infantil.</p>
       </div>
       <div>
@@ -559,13 +571,17 @@
 
     function toggleMenu() {
       if (window.innerWidth <= 768) {
-        document.getElementById('nav-menu').classList.toggle('active');
-        const btnDesktop = document.getElementById('btn-desktop-nav');
-        const btnMobileWrapper = document.querySelector('.nav-btn-mobile-wrapper');
+        const navMenu = document.getElementById('nav-menu');
+        const menuIcon = document.getElementById('menu-icon');
         
-        if(btnDesktop) btnDesktop.style.display = 'none'; 
-        if(btnMobileWrapper) {
-          btnMobileWrapper.style.display = btnMobileWrapper.style.display === 'block' ? 'none' : 'block';
+        navMenu.classList.toggle('active');
+        
+        if (navMenu.classList.contains('active')) {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        } else {
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
         }
       }
     }
