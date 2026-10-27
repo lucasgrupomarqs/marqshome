@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
-  <!-- =========================================
-       SEO PRINCIPAL & INDEXAÇÃO GOOGLE
-       ========================================= -->
+  <!-- SEO PRINCIPAL & INDEXAÇÃO GOOGLE -->
   <title>Marqs Home | Importadora, Atacado Corporativo & Casa e Jardim</title>
   <meta name="description" content="Importadora oficial especialista em produtos para Casa, Jardim, Lazer e Linha Infantil. Vendas em atacado corporativo para CNPJ e varejo nos principais marketplaces.">
   <meta name="keywords" content="Marqs Home, importadora de produtos, atacado corporativo, cadeiras ergonômicas NR-17, tendas gazebo, cama elástica infantil, mangueiras de jardim, compras CNPJ, fornecedor atacado">
@@ -18,9 +16,7 @@
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
 
-  <!-- =========================================
-       OPEN GRAPH / SEO PARA REDES SOCIAIS & WHATSAPP
-       ========================================= -->
+  <!-- OPEN GRAPH / SEO PARA REDES SOCIAIS & WHATSAPP -->
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Marqs Home | Importadora & Soluções Corporativas">
@@ -38,9 +34,7 @@
   <meta name="twitter:description" content="Produtos importados de alta qualidade para Casa, Jardim, Lazer e Atacado Corporativo.">
   <meta name="twitter:image" content="logo.png">
 
-  <!-- =========================================
-       DADOS ESTRUTURADOS JSON-LD (SCHEMA.ORG PARA GOOGLE)
-       ========================================= -->
+  <!-- DADOS ESTRUTURADOS JSON-LD (SCHEMA.ORG) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -225,22 +219,85 @@
     .about-card-logo { height: 50px; width: auto; margin-bottom: 20px; object-fit: contain; }
     .about-card h3 { font-size: 1.4rem; margin-bottom: 16px; }
 
-    /* PRODUTOS */
+    /* PRODUTOS COM CARDS DE IMAGEM DE FUNDO */
     .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px auto; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+    
     .product-card {
-      background: var(--white); border-radius: 16px; padding: 30px;
-      border: 1px solid var(--border-color); transition: var(--transition);
-      display: flex; flex-direction: column; position: relative;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px 24px;
+      transition: var(--transition);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border: 1px solid var(--border-color);
     }
-    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(138, 105, 212, 0.12); border-color: var(--primary-highlight); }
+
+    .product-card-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s ease;
+      z-index: 0;
+    }
+
+    .product-card-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(28, 26, 52, 0.2) 0%, rgba(18, 17, 36, 0.92) 100%);
+      z-index: 1;
+      transition: var(--transition);
+    }
+
+    .product-card-content {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+    }
+
+    .product-card:hover .product-card-bg {
+      transform: scale(1.08);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(138, 105, 212, 0.25);
+      border-color: var(--primary-highlight);
+    }
+
+    .product-card:hover .product-card-overlay {
+      background: linear-gradient(180deg, rgba(28, 26, 52, 0.1) 0%, rgba(18, 17, 36, 0.96) 100%);
+    }
+
     .product-icon {
-      width: 60px; height: 60px; border-radius: 12px; background: rgba(138, 105, 212, 0.1);
-      color: var(--primary-highlight); display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem; margin-bottom: 24px;
+      width: 50px; height: 50px; border-radius: 12px;
+      background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
+      color: var(--white); display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 16px;
     }
-    .product-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
-    .product-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; flex-grow: 1; }
+
+    .product-card h3 { font-size: 1.35rem; color: var(--white); margin-bottom: 8px; }
+    .product-card p { color: #E0E2F5; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
+    
+    .product-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #a382f0;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-card-link {
+      color: var(--white);
+      transform: translateX(4px);
+    }
 
     /* ATACADO COM FORMULÁRIO */
     .b2b-section { background: var(--primary-dark); color: var(--white); border-radius: 32px; padding: 80px 60px; }
@@ -538,7 +595,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO PRODUTOS -->
+  <!-- SEÇÃO PRODUTOS COM IMAGENS DE FUNDO -->
   <section id="produtos" class="section-padding" style="background: #F0F2FB;">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
@@ -547,29 +604,52 @@
       </div>
 
       <div class="products-grid">
+        <!-- 1. Cadeiras & Conforto -->
         <article class="product-card" data-aos="fade-up">
-          <div class="product-icon"><i class="fa-solid fa-chair"></i></div>
-          <h3>Cadeiras & Conforto</h3>
-          <p>Design moderno e ergonômico para ambientes corporativos e home-office. <strong>Todos os modelos possuem certificação NR-17.</strong></p>
-          <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-card-bg" style="background-image: url('https://http2.mlstatic.com/D_NQ_NP_2X_605454-MLA117327576958_102026-F.webp');"></div>
+          <div class="product-card-overlay"></div>
+          <div class="product-card-content">
+            <div class="product-icon"><i class="fa-solid fa-chair"></i></div>
+            <h3>Cadeiras & Conforto</h3>
+            <p>Design moderno e ergonômico para escritórios e home-office. Modelos com certificação NR-17.</p>
+            <a href="#atacado" class="product-card-link">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
+
+        <!-- 2. Tendas Gazebo -->
         <article class="product-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="product-icon"><i class="fa-solid fa-campground"></i></div>
-          <h3>Tendas Gazebo</h3>
-          <p>Estruturas resistentes para praia, campo, eventos e área externa corporativa.</p>
-          <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-card-bg" style="background-image: url('https://http2.mlstatic.com/D_NQ_NP_2X_655774-MLA114023032494_072026-F.webp');"></div>
+          <div class="product-card-overlay"></div>
+          <div class="product-card-content">
+            <div class="product-icon"><i class="fa-solid fa-campground"></i></div>
+            <h3>Tendas Gazebo</h3>
+            <p>Estruturas resistentes para praia, campo, eventos e cobertura de áreas externas.</p>
+            <a href="#atacado" class="product-card-link">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
+
+        <!-- 3. Camas Elásticas -->
         <article class="product-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="product-icon"><i class="fa-solid fa-child-reaching"></i></div>
-          <h3>Camas Elásticas</h3>
-          <p>Linha infantil focada em segurança, durabilidade e diversão garantida.</p>
-          <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-card-bg" style="background-image: url('https://http2.mlstatic.com/D_NQ_NP_2X_799792-MLA85412930213_052025-F.webp');"></div>
+          <div class="product-card-overlay"></div>
+          <div class="product-card-content">
+            <div class="product-icon"><i class="fa-solid fa-child-reaching"></i></div>
+            <h3>Camas Elásticas</h3>
+            <p>Linha infantil focada em máxima segurança, alta durabilidade e diversão garantida.</p>
+            <a href="#atacado" class="product-card-link">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
+
+        <!-- 4. Mangueiras de Jardim -->
         <article class="product-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="product-icon"><i class="fa-solid fa-faucet-drip"></i></div>
-          <h3>Mangueiras de Jardim</h3>
-          <p>Praticidade e resistência para irrigação e manutenção de infraestruturas.</p>
-          <a href="#atacado" class="nav-link" style="font-weight: 600;">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-card-bg" style="background-image: url('https://http2.mlstatic.com/D_NQ_NP_2X_801751-MLA113255118524_072026-F.webp');"></div>
+          <div class="product-card-overlay"></div>
+          <div class="product-card-content">
+            <div class="product-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+            <h3>Mangueiras de Jardim</h3>
+            <p>Praticidade, flexibilidade e alta resistência para irrigação e manutenção geral.</p>
+            <a href="#atacado" class="product-card-link">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
       </div>
     </div>
