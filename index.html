@@ -2,47 +2,44 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
   <!-- SEO PRINCIPAL & INDEXAÇÃO GOOGLE -->
   <title>Marqs Home | Importadora, Atacado Corporativo & Casa e Jardim</title>
   <meta name="description" content="Importadora oficial especialista em produtos para Casa, Jardim, Lazer e Linha Infantil. Vendas em atacado corporativo para CNPJ e varejo nos principais marketplaces.">
   <meta name="keywords" content="Marqs Home, importadora de produtos, atacado corporativo, cadeiras ergonômicas NR-17, tendas gazebo, cama elástica infantil, mangueiras de jardim, compras CNPJ, fornecedor atacado">
   <meta name="author" content="Marqs Home">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#120B3E">
   <link rel="canonical" href="https://www.marqshome.com.br/">
-  
-  <!-- Favicon / Ícone da Aba -->
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
 
-  <!-- OPEN GRAPH / SEO PARA REDES SOCIAIS & WHATSAPP -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- OPEN GRAPH / WHATSAPP (URLs absolutas: a imagem aparece no link compartilhado) -->
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Marqs Home | Importadora & Soluções Corporativas">
   <meta property="og:description" content="Há mais de 6 anos importando produtos de alto padrão com soluções práticas para seu lar e sua empresa. Conheça nossas linhas e condições de atacado.">
   <meta property="og:url" content="https://www.marqshome.com.br/">
   <meta property="og:site_name" content="Marqs Home">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:image" content="https://www.marqshome.com.br/assets/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Logotipo Marqs Home Importadora">
-
-  <!-- Twitter Cards -->
+  <meta property="og:image:alt" content="Navio cargueiro da Marqs Home Importadora no mar">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Marqs Home | Importadora & Soluções Corporativas">
   <meta name="twitter:description" content="Produtos importados de alta qualidade para Casa, Jardim, Lazer e Atacado Corporativo.">
-  <meta name="twitter:image" content="logo.png">
+  <meta name="twitter:image" content="https://www.marqshome.com.br/assets/og.jpg">
 
-  <!-- DADOS ESTRUTURADOS JSON-LD (SCHEMA.ORG) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Marqs Home",
-    "altName": "Marqs Home Importadora",
+    "alternateName": "Marqs Home Importadora",
     "url": "https://www.marqshome.com.br/",
-    "logo": "https://www.marqshome.com.br/logo.png",
+    "logo": "https://www.marqshome.com.br/assets/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+55-11-93436-5314",
@@ -57,435 +54,328 @@
     ]
   }
   </script>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    /* Layout: abertura em vídeo guiada pelo scroll (o navio chegando), depois a rota da importação contada em etapas: porto, linhas, estoque, lojas. */
     :root {
-      --primary-highlight: #8a69d4;
-      --primary-dark: #1E1C3C;
-      --white: #FFFFFF;
-      --bg-light: #F8F9FD;
-      --text-dark: #1C1C28;
-      --text-muted: #62627A;
-      --border-color: #E2E4EC;
-      --font-main: 'Inter', sans-serif;
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --violeta: #855EF6;
+      --violeta-hover: #6F48E8;
+      --violeta-claro: #B9A3FF;
+      --violeta-suave: rgba(133, 94, 246, .12);
+      --indigo: #120B3E;
+      --indigo-2: #1E1C3C;
+      --mar: #12224A;
+      --fundo: #F6F5FB;
+      --fundo-2: #ECEAF6;
+      --branco: #FFFFFF;
+      --texto: #1A1632;
+      --texto-2: #5D5A78;
+      --linha: #DEDBEC;
+      --f-display: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+      --f-texto: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --f-mono: 'DM Mono', ui-monospace, Menlo, Consolas, monospace;
+      --ease-out: cubic-bezier(.22, .8, .24, 1);
+      --ease-io: cubic-bezier(.65, 0, .35, 1);
+      --tshadow: 0 1px 2px rgba(6, 8, 24, .85), 0 3px 14px rgba(6, 8, 24, .55), 0 10px 40px rgba(6, 8, 24, .5);
     }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { overflow-x: hidden; overflow-x: clip; scroll-behavior: smooth; }
+    body { overflow-x: hidden; overflow-x: clip; font-family: var(--f-texto); color: var(--texto); background: var(--fundo); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 3px solid var(--violeta); outline-offset: 3px; border-radius: 6px; }
+    .sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .skip { position: fixed; left: 16px; top: 8px; z-index: 2000; background: var(--branco); color: var(--texto); padding: 8px 14px; border-radius: 8px; transform: translateY(-200%); transition: transform .3s var(--ease-out); }
+    .skip:focus { transform: none; }
+    h1, h2, h3, h4 { font-family: var(--f-display); color: var(--indigo); letter-spacing: -.02em; line-height: 1.08; font-weight: 700; }
+    .ico { width: 1.15em; height: 1.15em; flex: none; display: inline-block; vertical-align: -.18em; }
+    .mobile-toggle .ico { width: 28px; height: 28px; }
+    .whatsapp-float .ico { width: 30px; height: 30px; }
+    .about-feature .ico { width: 22px; height: 22px; }
+    .b2b-features .ico { color: var(--violeta-claro); transform: translateY(.18em); }
+    .cue .ico { animation: cue 2.4s var(--ease-io) infinite -.6s; }
+    body.paused *, body.paused *::before, body.paused *::after { animation-play-state: paused !important; }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-main);
-      color: var(--text-dark);
-      background-color: var(--bg-light);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    .container { max-width: 1240px; margin: 0 auto; width: 100%; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
 
-    h1, h2, h3, h4 { font-weight: 700; color: var(--primary-dark); letter-spacing: -0.02em; }
-    a { text-decoration: none; color: inherit; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 26px; border-radius: 50px; font-family: var(--f-texto); font-weight: 600; font-size: 1rem; line-height: 1.2; cursor: pointer; border: 0; transition: background .3s var(--ease-out), transform .35s var(--ease-out), box-shadow .35s var(--ease-out), color .3s var(--ease-out); }
+    .btn-primary { background: var(--violeta); color: var(--branco); box-shadow: 0 10px 26px rgba(133, 94, 246, .35); }
+    .btn-primary:hover { background: var(--violeta-hover); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(133, 94, 246, .45); }
+    .btn-ghost { color: var(--branco); box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .85); background: rgba(255, 255, 255, .04); backdrop-filter: blur(6px); }
+    .btn-ghost:hover { background: rgba(255, 255, 255, .14); }
+    .btn-outline { color: var(--indigo); box-shadow: inset 0 0 0 2px var(--indigo); }
+    .btn-outline:hover { background: var(--indigo); color: var(--branco); }
+    @media (pointer: coarse) { .btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; } }
 
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      gap: 10px; padding: 14px 28px; border-radius: 50px;
-      font-weight: 600; font-size: 1rem; transition: var(--transition);
-      cursor: pointer; border: none; text-align: center;
-    }
-    .btn-primary {
-      background: var(--primary-highlight); color: var(--white);
-      box-shadow: 0 10px 25px rgba(138, 105, 212, 0.3);
-    }
-    .btn-primary:hover {
-      background: #7853c8; transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(138, 105, 212, 0.4);
-    }
-    .btn-outline { border: 2px solid var(--primary-dark); color: var(--primary-dark); background: transparent; }
-    .btn-outline:hover { background: var(--primary-dark); color: var(--white); transform: translateY(-3px); }
-
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; }
-
-    /* HEADER */
-    .header {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color); transition: var(--transition);
-    }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-    
-    .brand-logo { display: flex; align-items: center; gap: 12px; }
-    .brand-logo img { height: 45px; width: auto; object-fit: contain; }
-    
-    .nav-menu { display: flex; gap: 32px; list-style: none; align-items: center; }
-    .nav-link { font-weight: 500; color: var(--primary-dark); transition: var(--transition); position: relative; }
-    .nav-link:hover { color: var(--primary-highlight); }
-    .nav-link::after {
-      content: ''; position: absolute; width: 0; height: 2px;
-      bottom: -4px; left: 0; background-color: var(--primary-highlight); transition: var(--transition);
-    }
-    .nav-link:hover::after { width: 100%; }
-    
+    /* ===== HEADER ===== */
+    .header { position: fixed; inset: 0 0 auto; z-index: 1000; padding-top: env(safe-area-inset-top, 0px); transition: background .5s var(--ease-out), box-shadow .5s var(--ease-out); }
+    .header.solid { background: rgba(255, 255, 255, .94); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--linha); }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; height: 78px; gap: 20px; }
+    .brand-logo { display: grid; flex: none; }
+    .brand-logo img { height: 40px; width: auto; grid-area: 1/1; transition: opacity .4s var(--ease-out); }
+    .brand-logo .escuro { opacity: 0; }
+    .header.solid .brand-logo .escuro { opacity: 1; }
+    .header.solid .brand-logo .claro { opacity: 0; }
+    .nav-menu { display: flex; gap: 30px; list-style: none; align-items: center; }
+    .nav-link { font-weight: 500; font-size: .95rem; color: rgba(255, 255, 255, .9); position: relative; transition: color .3s var(--ease-out); }
+    .header.solid .nav-link { color: var(--indigo); }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 100%; height: 2px; background: var(--violeta); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease-out); }
+    .nav-link:hover::after { transform: scaleX(1); }
     .nav-btn-mobile-wrapper { display: none; }
-    .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; }
+    .mobile-toggle { display: none; font-size: 1.5rem; color: var(--branco); cursor: pointer; background: none; border: 0; width: 44px; height: 44px; }
+    .header.solid .mobile-toggle { color: var(--indigo); }
 
-    /* HERO SECTION */
-    .hero {
-      position: relative;
-      padding-top: 180px; padding-bottom: 120px;
-      color: var(--white);
-      overflow: hidden;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      background: var(--primary-dark);
-    }
-    .hero-video-container {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .hero-video-iframe {
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 100vw; height: 56.25vw;
-      min-height: 100vh; min-width: 177.77vh;
-      transform: translate(-50%, -50%);
-      border: none;
-    }
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(30, 28, 60, 0.35) 0%, rgba(18, 17, 36, 0.45) 100%);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-    .hero-title { font-size: 3.5rem; line-height: 1.15; color: var(--white); margin-bottom: 24px; }
-    .hero-title span { color: #a382f0; }
-    .hero-subtitle { font-size: 1.2rem; color: #F0F1FA; margin-bottom: 36px; max-width: 650px; font-weight: 500; }
-    
-    .hero-badges { display: flex; gap: 30px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.25); padding-top: 28px; }
-    .badge-item { display: flex; align-items: center; gap: 12px; }
-    .badge-item i { font-size: 2rem; color: #a382f0; }
-    .badge-text strong { display: block; font-size: 1.3rem; color: var(--white); }
-    .badge-text span { font-size: 0.9rem; color: #E0E2F5; }
+    /* ===== ABERTURA ===== */
+    .hero { position: relative; height: 500vh; background: var(--mar); }
+    .stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; color: var(--branco); }
+    .media { position: absolute; inset: 0; background: var(--mar); }
+    .poster { position: absolute; inset: 0; background-size: cover; background-position: 50% 50%; }
+    #hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; opacity: 0; transition: opacity .8s var(--ease-out); transform: translateZ(0); }
+    .stage.video-ready #hero-video { opacity: 1; }
+    .veu { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(8, 10, 30, .6) 0%, rgba(8, 10, 30, .32) 30%, rgba(8, 10, 30, 0) 52%), linear-gradient(180deg, rgba(8, 10, 30, .5) 0%, rgba(8, 10, 30, 0) 20%, rgba(8, 10, 30, 0) 76%, rgba(8, 10, 30, .5) 100%); }
+    .band { position: absolute; left: max(24px, 5vw); top: 48%; width: min(38vw, 560px); transform: translateY(-50%); text-shadow: var(--tshadow); opacity: 0; visibility: hidden; }
+    .band::before { content: ''; position: absolute; inset: -30% -22% -30% -40%; z-index: -1; pointer-events: none; opacity: calc(.3 + .7 * var(--k, 1)); background: radial-gradient(ellipse 62% 58% at 42% 50%, rgba(6, 8, 26, .6) 0%, rgba(6, 8, 26, .38) 46%, rgba(6, 8, 26, 0) 76%); }
+    .band .btn { text-shadow: none; }
+    .kicker { font-family: var(--f-mono); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 20px; color: rgba(255, 255, 255, .88); }
+    .band h1, .band h2, .band .big { font-family: var(--f-display); color: var(--branco); font-weight: 700; font-size: clamp(2.4rem, 4.4vw, 4.6rem); line-height: 1.02; letter-spacing: -.025em; text-wrap: balance; }
+    .band .destaque, .static-copy .destaque { color: var(--violeta-claro); }
+    .band p.sub { font-size: clamp(1rem, 1.25vw, 1.2rem); margin-top: 18px; max-width: 38ch; color: rgba(255, 255, 255, .92); }
+    .numero { font-family: var(--f-display); font-weight: 800; font-size: clamp(4rem, 9vw, 8.4rem); line-height: .9; letter-spacing: -.04em; color: var(--branco); font-variant-numeric: tabular-nums; }
+    .w { display: inline-block; --kc: clamp(0, calc((var(--k, 0) - var(--th, 0)) * 2.8), 1); opacity: var(--kc); transform: translateY(calc((1 - var(--kc)) * 26px)); }
+    .band .sub, .band .numero { --ks: clamp(0, calc((var(--k, 0) - .5) * 3.4), 1); opacity: var(--ks); transform: translateY(calc((1 - var(--ks)) * 14px)); }
+    .band .numero { --ks: clamp(0, calc(var(--k, 0) * 2.2), 1); }
+    .band .acoes { --kb: clamp(0, calc((var(--k, 0) - .74) * 5), 1); opacity: var(--kb); transform: translateY(calc((1 - var(--kb)) * 12px)); display: flex; flex-wrap: wrap; gap: 12px 14px; margin-top: 30px; }
 
-    /* STATS */
-    .stats-section { margin-top: -50px; position: relative; z-index: 10; }
-    .stats-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-      background: var(--white); border-radius: 20px; padding: 40px;
-      box-shadow: 0 20px 40px rgba(30, 28, 60, 0.08);
-    }
-    .stat-card { text-align: center; border-right: 1px solid var(--border-color); }
-    .stat-card:last-child { border-right: none; }
-    .stat-number { font-size: 2.8rem; font-weight: 800; color: var(--primary-highlight); margin-bottom: 4px; }
-    .stat-label { color: var(--text-muted); font-weight: 500; }
+    /* assinatura: a rota da importação */
+    .rota { position: absolute; right: calc(max(24px, 4vw) + env(safe-area-inset-right, 0px)); bottom: calc(28px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; gap: 10px; padding: 14px 16px 14px; background: rgba(8, 10, 30, .5); border: 1px solid rgba(185, 163, 255, .26); border-radius: 14px; backdrop-filter: blur(12px); font-family: var(--f-mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .7); min-width: 300px; }
+    .rota-topo { display: flex; justify-content: space-between; gap: 12px; color: rgba(255, 255, 255, .92); }
+    .rota-topo b { font-weight: 500; color: var(--violeta-claro); font-variant-numeric: tabular-nums; }
+    .rota-trilho { position: relative; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, .18); overflow: hidden; }
+    .rota-trilho i { position: absolute; inset: 0; background: var(--violeta-claro); transform-origin: left; transform: scaleX(var(--rp, 0)); }
+    .rota ol { display: flex; justify-content: space-between; list-style: none; gap: 8px; }
+    .rota li { transition: color .4s var(--ease-out); }
+    .rota li.on { color: var(--branco); }
+    .carga { position: absolute; left: 50%; bottom: calc(26px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); width: 30px; height: 30px; color: var(--branco); opacity: .8; transition: opacity .6s var(--ease-out); }
+    .stage.video-ready .carga { opacity: 0; }
+    .cue { position: absolute; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: var(--f-mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .85); opacity: var(--cue, 1); text-shadow: 0 1px 6px rgba(6, 8, 24, .8); }
+    @keyframes cue { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+    .static-copy, .static-img { display: none; }
 
-    /* INSTITUCIONAL (QUEM SOMOS) */
-    .section-padding { padding: 100px 0; }
-    .section-tag {
-      text-transform: uppercase; font-size: 0.85rem; font-weight: 700;
-      letter-spacing: 2px; color: var(--primary-highlight); margin-bottom: 12px; display: block;
+    /* celular e tablet em pé: a mesma jornada, com o vídeo recortado na vertical no alto e as frases embaixo */
+    @media (max-width: 720px), (orientation: portrait) and (max-width: 1024px), (orientation: portrait) and (pointer: coarse) {
+      .hero { height: 540vh; }
+      .stage { background: var(--indigo); }
+      .media { bottom: auto; height: 60%; }
+      .poster { background-position: 50% 50%; }
+      #hero-video { object-position: 50% 50%; }
+      .veu { background: linear-gradient(180deg, rgba(8, 10, 30, .5) 0%, rgba(8, 10, 30, 0) 16%, rgba(18, 11, 62, 0) 44%, rgba(18, 11, 62, .92) 57%, #120B3E 62%, #120B3E 100%); }
+      .band { left: max(20px, env(safe-area-inset-left, 0px)); right: max(20px, env(safe-area-inset-right, 0px)); width: auto; max-width: 560px; top: 57%; bottom: auto; transform: none; }
+      .band::before { display: none; }
+      .kicker { margin-bottom: 12px; font-size: .7rem; }
+      .band h1, .band h2, .band .big { font-size: clamp(1.9rem, 8.4vw, 2.9rem); }
+      .numero { font-size: clamp(3.4rem, 17vw, 5.4rem); }
+      .band p.sub { font-size: 1rem; margin-top: 12px; }
+      .band .acoes { margin-top: 20px; }
+      .rota, .cue { display: none; }
+      .carga { left: auto; right: calc(16px + env(safe-area-inset-right, 0px)); top: calc(60% - 46px); bottom: auto; transform: none; }
     }
-    .section-title { font-size: 2.4rem; margin-bottom: 16px; }
-    
-    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-    .about-features { display: flex; flex-direction: column; gap: 24px; margin-top: 30px; }
+    @media (max-width: 720px) and (max-height: 640px) { .band .sub { display: none; } }
+
+    /* portões do hero estático (celular deitado e movimento reduzido): mesmas queries do JS */
+    @media (orientation: landscape) and (pointer: coarse) and (max-height: 560px), (prefers-reduced-motion: reduce) {
+      .hero { height: auto; }
+      .stage { position: relative; height: auto; display: flex; flex-direction: column; padding-top: calc(86px + env(safe-area-inset-top, 0px)); background: linear-gradient(180deg, var(--indigo) 0%, var(--mar) 100%); }
+      .media, .veu, .band, .cue, .carga, .rota { display: none; }
+      .static-copy { display: block; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); padding-block: 26px 30px; max-width: 680px; }
+      .static-copy h1 { font-family: var(--f-display); color: var(--branco); font-weight: 700; font-size: clamp(2.3rem, 9vw, 3.6rem); line-height: 1.04; letter-spacing: -.025em; text-wrap: balance; }
+      .static-copy p { margin: 16px 0 24px; color: rgba(255, 255, 255, .88); max-width: 38ch; }
+      .static-copy .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+      .static-img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 68% 50%; }
+    }
+    @media (max-height: 560px) { .cue, .rota { display: none; } }
+
+    /* ===== SEÇÕES ===== */
+    .section-padding { padding-block: clamp(80px, 10vw, 140px); }
+    .etapa { display: inline-flex; align-items: center; gap: 12px; font-family: var(--f-mono); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: var(--violeta); margin-bottom: 18px; }
+    .etapa span { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--violeta-suave); font-size: .72rem; letter-spacing: 0; }
+    .section-title { font-size: clamp(2.1rem, 4.2vw, 3.4rem); text-wrap: balance; }
+    .lede { color: var(--texto-2); font-size: 1.08rem; max-width: 56ch; margin-top: 18px; }
+    .reveal { transform: translateY(18px); transition: transform 1.1s var(--ease-out); }
+    .reveal.in { transform: none; }
+
+    /* números */
+    .stats-section { position: relative; z-index: 5; margin-top: -1px; background: var(--indigo); color: var(--branco); }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .stat-card { padding-block: 44px; padding-inline: 8px 24px; border-right: 1px solid rgba(255, 255, 255, .12); }
+    .stat-card + .stat-card { padding-left: 32px; }
+    .stat-card:last-child { border-right: 0; }
+    .stat-number { font-family: var(--f-display); font-weight: 800; font-size: clamp(2.6rem, 4.4vw, 3.6rem); line-height: 1; letter-spacing: -.03em; color: var(--branco); font-variant-numeric: tabular-nums; }
+    .stat-number em { font-style: normal; color: var(--violeta-claro); }
+    .stat-label { margin-top: 10px; color: rgba(255, 255, 255, .72); font-size: .95rem; }
+
+    /* quem somos: porto */
+    .sobre-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(36px, 6vw, 90px); align-items: center; }
+    .sobre-texto { min-width: 0; }
+    .sobre-texto p { color: var(--texto-2); margin-top: 16px; max-width: 54ch; }
+    .about-features { display: grid; gap: 22px; margin-top: 34px; }
     .about-feature { display: flex; gap: 16px; align-items: flex-start; }
-    .about-feature i {
-      font-size: 1.4rem; color: var(--primary-highlight); 
-      background: rgba(138, 105, 212, 0.1); padding: 14px; border-radius: 12px;
-      flex-shrink: 0;
-    }
-    .about-feature h4 { margin-bottom: 6px; font-size: 1.15rem; }
-    .about-feature p { color: var(--text-muted); font-size: 0.95rem; }
-    
-    .about-card {
-      background: var(--white); border: 1px solid var(--border-color);
-      border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(30, 28, 60, 0.06);
-    }
-    .about-card-logo { height: 50px; width: auto; margin-bottom: 20px; object-fit: contain; }
-    .about-card h3 { font-size: 1.4rem; margin-bottom: 16px; }
+    .about-feature .ic { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 12px; background: var(--violeta-suave); color: var(--violeta); }
+    .about-feature h4 { font-size: 1.15rem; margin-bottom: 4px; }
+    .about-feature p { margin: 0; font-size: .95rem; }
+    .porto-foto { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 4/5; box-shadow: 0 40px 80px -40px rgba(18, 11, 62, .55); }
+    .porto-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; transform: scale(1.08); transition: transform 1.8s var(--ease-out); }
+    .porto-foto.in img { transform: none; }
+    .identidade { position: absolute; left: 18px; right: 18px; bottom: 18px; background: rgba(255, 255, 255, .9); backdrop-filter: blur(14px); border-radius: 16px; padding: 20px 22px; }
+    .identidade img { height: 30px; width: auto; margin-bottom: 12px; }
+    .identidade ul { list-style: none; display: grid; gap: 8px; font-size: .92rem; color: var(--texto-2); }
+    .identidade strong { color: var(--indigo); }
+    .identidade blockquote { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--linha); font-style: italic; font-weight: 600; color: var(--indigo); font-size: .92rem; }
+    .identidade cite { display: block; font-style: normal; font-weight: 500; color: var(--violeta); font-size: .82rem; margin-top: 2px; }
 
-    /* PRODUTOS COM CARDS DE IMAGEM DE FUNDO */
-    .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px auto; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
-    
-    .product-card {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      min-height: 380px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 30px 24px;
-      transition: var(--transition);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      border: 1px solid var(--border-color);
-    }
+    /* produtos */
+    .produtos { background: var(--branco); border-block: 1px solid var(--linha); }
+    .section-header { display: flex; justify-content: space-between; align-items: end; gap: 28px; flex-wrap: wrap; margin-bottom: clamp(44px, 5vw, 64px); }
+    .section-header .lede { margin-top: 0; max-width: 42ch; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+    .product-card { position: relative; border-radius: 20px; overflow: hidden; min-height: 400px; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px 24px; border: 1px solid var(--linha); box-shadow: 0 10px 25px rgba(0, 0, 0, .08); isolation: isolate; transition: transform .45s var(--ease-out), box-shadow .45s var(--ease-out), border-color .45s var(--ease-out); }
+    .product-card-bg { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center; transition: transform .8s var(--ease-out); }
+    .product-card-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(18, 11, 62, 0) 0%, rgba(18, 11, 62, .3) 100%); transition: opacity .5s var(--ease-out); }
+    .product-card-overlay::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18, 11, 62, .3) 0%, rgba(14, 9, 44, .95) 100%); opacity: 0; transition: opacity .5s var(--ease-out); }
+    .product-card-content { color: var(--branco); opacity: 0; transform: translateY(20px); transition: opacity .45s var(--ease-out), transform .45s var(--ease-out); }
+    .product-card:hover { transform: translateY(-8px); border-color: var(--violeta); box-shadow: 0 20px 40px rgba(133, 94, 246, .28); }
+    .product-card:hover .product-card-bg { transform: scale(1.08); }
+    .product-card:hover .product-card-overlay::after, .product-card:focus-within .product-card-overlay::after { opacity: 1; }
+    .product-card:hover .product-card-content, .product-card:focus-within .product-card-content { opacity: 1; transform: none; }
+    .product-card h3 { color: var(--branco); font-size: 1.4rem; margin-bottom: 8px; }
+    .product-card p { color: #E3E0F7; font-size: .92rem; line-height: 1.5; margin-bottom: 18px; }
+    .product-card-link { display: inline-flex; align-items: center; gap: 8px; color: var(--violeta-claro); font-weight: 700; font-size: .95rem; transition: color .3s var(--ease-out), transform .35s var(--ease-out); }
+    .product-card:hover .product-card-link { color: var(--branco); transform: translateX(4px); }
+    @media (hover: none), (max-width: 768px) { .product-card-content { opacity: 1; transform: none; } .product-card-overlay::after { opacity: 1; } }
 
-    .product-card-bg {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-      z-index: 0;
-    }
+    /* atacado: estoque */
+    .b2b-wrap { position: relative; border-radius: 30px; overflow: hidden; color: var(--branco); isolation: isolate; }
+    .b2b-bg { position: absolute; inset: 0; z-index: -2; }
+    .b2b-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; transform: scale(1.08); transition: transform 2s var(--ease-out); }
+    .b2b-wrap.in .b2b-bg img { transform: none; }
+    .b2b-wrap::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(30, 24, 90, .9) 0%, rgba(30, 24, 90, .72) 42%, rgba(30, 24, 90, .35) 100%); }
+    .b2b-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(32px, 5vw, 70px); align-items: center; padding: clamp(36px, 6vw, 80px); }
+    .b2b-wrap .etapa { color: var(--violeta-claro); }
+    .b2b-wrap .etapa span { background: rgba(185, 163, 255, .16); }
+    .b2b-wrap h2 { color: var(--branco); }
+    .b2b-wrap .lede { color: rgba(255, 255, 255, .8); }
+    .b2b-features { list-style: none; margin: 28px 0 0; display: grid; gap: 14px; }
+    .b2b-features li { display: flex; align-items: baseline; gap: 14px; font-size: 1.04rem; }
+    .b2b-form-card { min-width: 0; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .16); border-radius: 22px; padding: clamp(24px, 3vw, 36px); backdrop-filter: blur(18px); }
+    .b2b-form-card h3 { color: var(--branco); font-size: 1.6rem; }
+    .b2b-form-card > p { color: rgba(255, 255, 255, .72); margin: 8px 0 22px; font-size: .95rem; }
+    .campo { display: grid; gap: 6px; margin-bottom: 14px; }
+    .campo label { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .72); }
+    .campo input { width: 100%; min-width: 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, .28); background: rgba(6, 4, 24, .35); color: var(--branco); font: inherit; font-size: .98rem; transition: border-color .3s var(--ease-out), background .3s var(--ease-out); }
+    .campo input::placeholder { color: rgba(255, 255, 255, .5); }
+    .campo input:focus { outline: none; border-color: var(--violeta-claro); background: rgba(6, 4, 24, .5); }
+    .b2b-form-card .btn { width: 100%; margin-top: 6px; }
+    .form-nota { margin-top: 14px; font-size: .86rem; color: rgba(255, 255, 255, .66); }
 
-    .product-card-overlay {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      /* Mais claro inicialmente para dar destaque a foto */
-      background: linear-gradient(180deg, rgba(28, 26, 52, 0) 0%, rgba(18, 17, 36, 0.3) 100%);
-      z-index: 1;
-      transition: all 0.5s ease;
-    }
+    /* lojas */
+    .channels-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .channel-card { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; background: var(--branco); border: 1px solid var(--linha); border-radius: 22px; padding: 34px 30px; transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out), border-color .4s var(--ease-out); }
+    .channel-card:hover { transform: translateY(-6px); border-color: var(--violeta); box-shadow: 0 24px 48px -24px rgba(133, 94, 246, .35); }
+    .channel-badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--violeta); margin-bottom: 22px; }
+    .channel-logo { font-family: var(--f-display); font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: 10px; line-height: 1.1; }
+    .channel-card p { color: var(--texto-2); font-size: .96rem; }
+    .ml-color { color: #2D3277; } .shopee-color { color: #D8431F; } .amazon-color { color: #232F3E; }
+    .btn-store { width: 100%; }
 
-    .product-card-content {
-      position: relative;
-      z-index: 2;
-      color: var(--white);
-      
-      /* Esconde o texto inicialmente */
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.4s ease-in-out;
-    }
+    /* rodapé */
+    .footer { background: #0B0722; color: var(--branco); padding: 80px 0 calc(30px + env(safe-area-inset-bottom, 0px)); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 56px; }
+    .footer-brand img { height: 42px; width: auto; margin-bottom: 18px; }
+    .footer-brand p { color: #A6A3C4; max-width: 40ch; }
+    .footer-title { color: var(--branco); font-size: 1.05rem; margin-bottom: 20px; }
+    .footer-links { list-style: none; display: grid; gap: 10px; }
+    .footer-links a, .footer p.contato { color: #A6A3C4; transition: color .3s var(--ease-out); }
+    .footer-links a:hover { color: var(--violeta-claro); }
+    .footer p.contato { margin-bottom: 10px; }
+    .footer-bottom { text-align: center; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .08); color: #7C7999; font-size: .88rem; }
 
-    .product-card:hover .product-card-bg {
-      transform: scale(1.08);
-    }
+    .whatsapp-float { position: fixed; right: calc(24px + env(safe-area-inset-right, 0px)); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: #25D366; color: var(--branco); font-size: 28px; box-shadow: 0 10px 25px rgba(37, 211, 102, .4); z-index: 999; transition: transform .35s var(--ease-out), opacity .4s var(--ease-out); }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float.escondido { opacity: 0; pointer-events: none; transform: scale(.8); }
 
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(138, 105, 212, 0.25);
-      border-color: var(--primary-highlight);
-    }
-
-    /* Revela o texto e escurece a imagem ao passar o mouse */
-    .product-card:hover .product-card-content {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .product-card:hover .product-card-overlay {
-      background: linear-gradient(180deg, rgba(28, 26, 52, 0.3) 0%, rgba(18, 17, 36, 0.95) 100%);
-    }
-
-    .product-card h3 { font-size: 1.35rem; color: var(--white); margin-bottom: 8px; }
-    .product-card p { color: #E0E2F5; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
-    
-    .product-card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #a382f0;
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: var(--transition);
-    }
-
-    .product-card:hover .product-card-link {
-      color: var(--white);
-      transform: translateX(4px);
-    }
-
-    /* ATACADO COM FORMULÁRIO */
-    .b2b-section { background: var(--primary-dark); color: var(--white); border-radius: 32px; padding: 80px 60px; }
-    .b2b-section h2 { color: var(--white); font-size: 2.4rem; margin-bottom: 20px; }
-    .b2b-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .b2b-features { list-style: none; margin: 30px 0; }
-    .b2b-features li { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; font-size: 1.05rem; }
-    .b2b-features i { color: var(--primary-highlight); font-size: 1.2rem; }
-
-    .b2b-form-card {
-      background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 24px;
-      padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-    .b2b-form-card h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 8px; }
-    .b2b-form-card input {
-      width: 100%; padding: 14px 18px; border-radius: 10px; margin-bottom: 16px;
-      border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.25); color: white;
-      font-family: var(--font-main); font-size: 0.95rem; outline: none; transition: var(--transition);
-    }
-    .b2b-form-card input:focus { border-color: var(--primary-highlight); background: rgba(0,0,0,0.4); }
-
-    /* LOJAS OFICIAIS */
-    .official-stores-section {
-      background-color: var(--bg-light);
-      position: relative;
-    }
-
-    .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-    
-    .channel-card {
-      background: var(--white);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 45px 35px;
-      text-align: center;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 10px 30px rgba(30, 28, 60, 0.04);
-    }
-
-    .channel-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--primary-highlight);
-      box-shadow: 0 20px 40px rgba(138, 105, 212, 0.15);
-    }
-
-    .channel-badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 20px;
-      background: rgba(138, 105, 212, 0.08);
-      color: var(--primary-highlight);
-      margin-bottom: 28px;
-    }
-
-    .channel-logo {
-      font-size: 2.1rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: -0.03em;
-    }
-
-    .ml-color { color: #2D3277; }
-    .shopee-color { color: #EE4D2D; }
-    .amazon-color { color: #232F3E; }
-
-    .btn-store {
-      width: 100%;
-      border: 2px solid var(--primary-dark);
-      color: var(--primary-dark);
-      background: transparent;
-      margin-top: 28px;
-      font-weight: 700;
-    }
-    .btn-store:hover {
-      background: var(--primary-dark);
-      color: var(--white);
-    }
-
-    /* FOOTER */
-    .footer { background: #0E0D1F; color: var(--white); padding: 80px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; }
-    .footer-title { color: var(--white); font-size: 1.1rem; margin-bottom: 24px; }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a { color: #A0A2B8; transition: var(--transition); }
-    .footer-links a:hover { color: var(--primary-highlight); }
-    .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: #7A7C95; font-size: 0.9rem; }
-
-    /* FLOAT WHATSAPP */
-    .whatsapp-float {
-      position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
-      background: #25D366; color: white; border-radius: 50%; display: flex;
-      align-items: center; justify-content: center; font-size: 30px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition);
-    }
-    .whatsapp-float:hover { transform: scale(1.1); }
-
-    /* RESPONSIVIDADE */
-    @media (max-width: 992px) {
-      .hero-title { font-size: 2.8rem; }
-      .b2b-grid, .about-grid { grid-template-columns: 1fr; }
-      .stats-grid, .channels-grid { grid-template-columns: 1fr; }
-      .stat-card { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
-      .stat-card:last-child { border-bottom: none; padding-bottom: 0; }
+    @media (max-width: 1080px) { .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 960px) {
+      .sobre-grid, .b2b-grid { grid-template-columns: 1fr; }
+      .porto-foto { aspect-ratio: 4/3; }
+      .channels-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
-
     @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-      .header { padding: 5px 0; }
-      .brand-logo img { height: 38px; }
-      
+      .nav-container { height: 70px; }
+      .brand-logo img { height: 34px; }
       #btn-desktop-nav { display: none !important; }
-      
-      .nav-menu {
-        position: absolute; top: 80px; left: 0; width: 100%;
-        background: var(--white); flex-direction: column; gap: 0;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-top: 1px solid var(--border-color);
-        max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      }
+      .mobile-toggle { display: grid; place-items: center; order: 3; margin-left: auto; margin-right: -8px; }
+      .nav-container > nav { order: 4; }
+      .identidade img { height: 28px; width: auto; aspect-ratio: auto; object-fit: contain; }
+      .b2b-grid { padding: 30px 16px; }
+      .b2b-form-card { padding: 22px 16px; }
+      .b2b-form-card .btn { padding: 12px 16px; font-size: .92rem; gap: 8px; }
+      .b2b-form-card .btn .ico { width: 1.05em; height: 1.05em; }
+      .nav-menu { position: absolute; top: 100%; left: 0; width: 100%; background: var(--branco); flex-direction: column; gap: 0; box-shadow: 0 15px 30px rgba(0, 0, 0, .15); max-height: 0; overflow: hidden; transition: max-height .35s var(--ease-io); }
       .nav-menu.active { max-height: 480px; }
-      .nav-menu li { width: 100%; text-align: left; border-bottom: 1px solid var(--bg-light); }
-      .nav-link { display: block; padding: 16px 24px; width: 100%; }
-      
-      .nav-btn-mobile-wrapper { display: block; padding: 16px 24px; border-bottom: none !important; }
-      .nav-btn-mobile { width: 100%; text-align: center; }
-
-      .mobile-toggle { display: block; }
-      
-      .hero { padding-top: 140px; padding-bottom: 80px; text-align: center; }
-      .hero-title { font-size: 2.2rem; }
-      .hero-subtitle { margin: 0 auto 30px auto; font-size: 1rem; }
-      .hero-badges { justify-content: center; flex-wrap: wrap; gap: 15px; }
-      
-      .btn { width: 100%; justify-content: center; }
-      
-      .section-padding { padding: 60px 0; }
-      .section-title { font-size: 1.8rem; line-height: 1.25; }
-      
-      .about-grid { gap: 36px; grid-template-columns: 1fr; }
-      .about-features { gap: 18px; margin-top: 20px; }
-      .about-feature i { padding: 12px; font-size: 1.2rem; }
-      .about-card { padding: 24px; border-radius: 18px; }
-      .about-card-logo { height: 40px; margin-bottom: 16px; }
-      
-      /* Ajuste Mobile: Exibe o texto dos produtos sempre, pois o mobile não tem "mouse por cima" */
-      .product-card-content { opacity: 1; transform: translateY(0); }
-      .product-card-overlay { background: linear-gradient(180deg, rgba(28, 26, 52, 0.2) 0%, rgba(18, 17, 36, 0.92) 100%); }
-
-      .b2b-section { padding: 40px 20px; border-radius: 20px; }
-      .b2b-section h2 { font-size: 1.8rem; text-align: center; }
-      .b2b-features li { justify-content: flex-start; text-align: left; font-size: 0.95rem; }
-      .b2b-form-card { padding: 24px; }
-      
-      .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
-      .footer-brand { display: flex; flex-direction: column; align-items: center; }
-      
-      .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; }
+      .nav-menu li { width: 100%; border-bottom: 1px solid var(--fundo); }
+      .nav-link, .header.solid .nav-link { display: block; padding: 16px 24px; color: var(--indigo); }
+      .nav-btn-mobile-wrapper { display: block; padding: 16px 24px; }
+      .nav-btn-mobile { width: 100%; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-card, .stat-card + .stat-card { padding: 26px 0; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+      .stat-card:last-child { border-bottom: 0; }
+      .products-grid { grid-template-columns: 1fr; }
+      .identidade { position: static; margin-top: 14px; background: var(--branco); border: 1px solid var(--linha); }
+      .porto-foto { overflow: visible; aspect-ratio: auto; box-shadow: none; }
+      .porto-foto > img { border-radius: 18px; aspect-ratio: 4/3; height: auto; }
+      .b2b-wrap { border-radius: 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .whatsapp-float { width: 52px; height: 52px; font-size: 24px; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; transition-delay: 0s !important; }
+      .reveal, .porto-foto img, .b2b-bg img { transform: none !important; }
+    }
+
+
+    /* fundo: luz roxa suave que se move devagar */
+    .ambiente { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .luz { position: absolute; width: 60vmax; height: 60vmax; border-radius: 50%; will-change: transform; }
+    .l1 { left: -16vmax; top: 4vh; background: radial-gradient(circle, rgba(133, 94, 246, .34) 0%, rgba(133, 94, 246, .12) 38%, rgba(133, 94, 246, 0) 66%); animation: luz1 80s var(--ease-io) infinite alternate -25s; }
+    .l2 { right: -18vmax; bottom: -14vmax; background: radial-gradient(circle, rgba(110, 120, 255, .28) 0%, rgba(110, 120, 255, .10) 38%, rgba(110, 120, 255, 0) 66%); animation: luz2 95s var(--ease-io) infinite alternate -40s; }
+    @keyframes luz1 { from { transform: translate(0, 0); } to { transform: translate(10vmax, 30vh); } }
+    @keyframes luz2 { from { transform: translate(0, 0); } to { transform: translate(-10vmax, -34vh); } }
+    .produtos { background: rgba(255, 255, 255, .45); }
+    @media (prefers-reduced-motion: reduce) { .luz { animation: none !important; } }
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol><symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="i-xmark" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16M7 15l4-4 3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-alvo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></g></symbol><symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#120B3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-checks" viewBox="0 0 24 24"><path d="M2 13l4 4 8-9M10 15l2 2 9-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-externo" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></g></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol><symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <div class="ambiente" aria-hidden="true"><span class="luz l1"></span><span class="luz l2"></span></div>
 
   <!-- HEADER -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="container nav-container">
-      <a href="#" class="brand-logo" title="Marqs Home - Página Inicial">
-        <img src="logo.png" alt="Logotipo Marqs Home Importadora">
+      <a href="#home" class="brand-logo" title="Marqs Home - Página Inicial">
+        <img class="claro" src="assets/logo-claro.png" alt="Marqs Home Importadora" width="160" height="42">
+        <img class="escuro" src="assets/logo.png" alt="" aria-hidden="true" width="160" height="42">
       </a>
-      
-      <div class="mobile-toggle" onclick="toggleMenu()" aria-label="Abrir Menu de Navegação">
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-      </div>
 
-      <nav>
+      <button class="mobile-toggle" type="button" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+        <svg class="ico" id="menu-icon" aria-hidden="true"><use href="#i-bars"/></svg>
+      </button>
+
+      <nav aria-label="Principal">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#home" class="nav-link" onclick="toggleMenu()">Início</a></li>
           <li><a href="#sobre" class="nav-link" onclick="toggleMenu()">A Marqs</a></li>
@@ -493,319 +383,377 @@
           <li><a href="#atacado" class="nav-link" onclick="toggleMenu()">Vendas Corporativas</a></li>
           <li><a href="#lojas" class="nav-link" onclick="toggleMenu()">Lojas Oficiais</a></li>
           <li class="nav-btn-mobile-wrapper">
-            <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" rel="noopener" class="btn btn-primary nav-btn-mobile">
-              <i class="fa-brands fa-whatsapp"></i> Atendimento
-            </a>
+            <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" rel="noopener" class="btn btn-primary nav-btn-mobile"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg> Atendimento</a>
           </li>
         </ul>
       </nav>
-      
-      <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" rel="noopener" class="btn btn-primary" id="btn-desktop-nav">
-        <i class="fa-brands fa-whatsapp"></i> Atendimento
-      </a>
+
+      <a href="https://wa.me/5511934365314?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento%20corporativo." target="_blank" rel="noopener" class="btn btn-primary" id="btn-desktop-nav"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg> Atendimento</a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- ABERTURA: O NAVIO CHEGANDO, GUIADO PELO SCROLL -->
   <section id="home" class="hero">
-    <div class="hero-video-container">
-      <iframe 
-        class="hero-video-iframe" 
-        src="https://www.youtube-nocookie.com/embed/KEFt2quibkg?autoplay=1&mute=1&loop=1&playlist=KEFt2quibkg&controls=0&showinfo=0&rel=0&enablejsapi=1" 
-        allow="autoplay; encrypted-media" 
-        title="Vídeo Institucional Marqs Home"
-        frameborder="0">
-      </iframe>
-      <div class="hero-overlay"></div>
-    </div>
+    <div class="stage" id="stage">
+      <div class="static-copy">
+        <p class="kicker">Importadora oficial · 6+ anos</p>
+        <h1>Excelência em importação para o <span class="destaque">seu lar &amp; negócio</span></h1>
+        <p>Há mais de 6 anos importando produtos de alto padrão com soluções práticas em Casa, Jardim, Lazer e Atacado Corporativo.</p>
+        <div class="acoes"><a href="#atacado" class="btn btn-primary">Atacado &amp; Corporativo</a><a href="#lojas" class="btn btn-ghost">Lojas Oficiais</a></div>
+      </div>
+      <img class="static-img" src="assets/hero-ending.jpg" alt="Navio cargueiro carregado de contêineres coloridos navegando no mar" loading="lazy">
 
-    <div class="container hero-content" data-aos="fade-right">
-      <h1 class="hero-title">Excelência em Importação para o <span>Seu Lar & Negócio</span></h1>
-      <p class="hero-subtitle">Há mais de 6 anos importando produtos de alto padrão com soluções práticas em Casa, Jardim, Lazer e Atacado Corporativo.</p>
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <a href="#atacado" class="btn btn-primary">Atacado & Corporativo</a>
-        <a href="#lojas" class="btn btn-outline" style="border-color: white; color: white;">Lojas Oficiais</a>
+      <div class="media" aria-hidden="true" inert>
+        <div class="poster" id="poster"></div>
+        <video id="hero-video" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
       </div>
-      <div class="hero-badges">
-        <div class="badge-item">
-          <i class="fa-solid fa-box-archive"></i>
-          <div class="badge-text"><strong>+1 Milhão</strong><span>Vendas Realizadas</span></div>
-        </div>
-        <div class="badge-item">
-          <i class="fa-solid fa-shield-halved"></i>
-          <div class="badge-text"><strong>6+ Anos</strong><span>De Tradição e Confiança</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="veu" aria-hidden="true"></div>
 
-  <!-- ESTATÍSTICAS -->
-  <section class="container stats-section">
-    <div class="stats-grid" data-aos="fade-up">
-      <div class="stat-card">
-        <div class="stat-number">+1M</div><div class="stat-label">Produtos Entregues</div>
+      <div class="band" data-a="0" data-b="0.22">
+        <p class="kicker">Importadora oficial · 6+ anos</p>
+        <h1 class="split">Excelência em importação para o <span class="destaque">seu lar &amp; negócio</span></h1>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">6+</div><div class="stat-label">Anos no Mercado</div>
+      <div class="band" data-a="0.26" data-b="0.47">
+        <p class="big split">Cada produto começa do outro lado do oceano.</p>
+        <p class="sub">A gente escolhe o fornecedor, acompanha a viagem e confere a carga antes dela chegar até você.</p>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">100%</div><div class="stat-label">Garantia Corporativa</div>
+      <div class="band" data-a="0.51" data-b="0.73">
+        <p class="numero" aria-hidden="true"><span id="contador">+0</span></p>
+        <p class="sub">vendas concluídas nas maiores lojas do Brasil, com reputação máxima no Mercado Livre.</p>
+        <p class="sr">Mais de 1 milhão de vendas concluídas.</p>
       </div>
+      <div class="band" data-a="0.77" data-b="1">
+        <h2 class="split">Do navio direto para o <span class="destaque">seu lar &amp; negócio.</span></h2>
+        <p class="sub">Atacado para empresas com nota fiscal e garantia nacional, ou a unidade nas nossas lojas oficiais.</p>
+        <div class="acoes"><a href="#atacado" class="btn btn-primary">Atacado &amp; Corporativo</a><a href="#lojas" class="btn btn-ghost">Lojas Oficiais</a></div>
+      </div>
+
+      <div class="rota" id="rota" aria-hidden="true">
+        <div class="rota-topo"><span>Rota da importação</span><b id="rotaPct">0%</b></div>
+        <div class="rota-trilho"><i></i></div>
+        <ol><li class="on">Fábrica</li><li>Navio</li><li>Porto</li><li>Estoque</li><li>Você</li></ol>
+      </div>
+      <svg class="carga" id="carga" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="126" transform="rotate(-90 24 24)" style="stroke-dashoffset:var(--ld,126)"/></svg>
+      <div class="cue" id="cue" aria-hidden="true">Role e acompanhe a carga<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></div>
     </div>
   </section>
 
-  <!-- SEÇÃO INSTITUCIONAL (QUEM SOMOS) -->
-  <section id="sobre" class="section-padding">
-    <div class="container">
-      <div class="about-grid">
-        <div data-aos="fade-right">
-          <span class="section-tag">Quem Somos</span>
+  <main id="main" tabindex="-1">
+    <!-- NÚMEROS -->
+    <section class="stats-section" aria-label="A Marqs em números">
+      <div class="container stats-grid">
+        <div class="stat-card"><div class="stat-number">+1<em>M</em></div><div class="stat-label">Vendas realizadas</div></div>
+        <div class="stat-card"><div class="stat-number">6<em>+</em></div><div class="stat-label">Anos no mercado</div></div>
+        <div class="stat-card"><div class="stat-number">100<em>%</em></div><div class="stat-label">Garantia corporativa</div></div>
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS: O PORTO -->
+    <section id="sobre" class="section-padding">
+      <div class="container sobre-grid">
+        <div class="sobre-texto reveal">
+          <p class="etapa"><span>02</span>Quem somos · O porto</p>
           <h2 class="section-title">A base forte para o seu lar e a parceira do seu negócio.</h2>
-          <p style="color: var(--text-muted); margin-bottom: 16px;">
-            A Marqs Home se destaca no cenário do varejo online como uma empresa multinicho em constante crescimento, especializada na importação e venda de uma ampla variedade de produtos.
-          </p>
-          <p style="color: var(--text-muted);">
-            Nossa dedicação está em oferecer soluções práticas com ótimo custo-benefício. Mantemo-nos fiéis aos nossos valores para criar e fornecer produtos que trazem conforto, design e segurança tanto para residências quanto para ambientes corporativos.
-          </p>
-
+          <p>A Marqs Home se destaca no varejo online como uma empresa multinicho em constante crescimento, especializada na importação e venda de uma ampla variedade de produtos.</p>
+          <p>Nossa dedicação está em oferecer soluções práticas com ótimo custo-benefício. Mantemo-nos fiéis aos nossos valores para criar e fornecer produtos que trazem conforto, design e segurança tanto para residências quanto para ambientes corporativos.</p>
           <div class="about-features">
-            <div class="about-feature">
-              <i class="fa-solid fa-chart-line"></i>
-              <div>
-                <h4>Crescimento Consolidado</h4>
-                <p>Com mais de 6 anos de mercado, somos uma loja oficial reconhecida nos maiores marketplaces do Brasil.</p>
-              </div>
-            </div>
-            <div class="about-feature">
-              <i class="fa-solid fa-bullseye"></i>
-              <div>
-                <h4>Nosso Propósito Multinicho</h4>
-                <p>Trabalhamos focados em casa e jardim, mas sempre buscando inovar e expandir com produtos de marca própria.</p>
-              </div>
-            </div>
+            <div class="about-feature"><span class="ic"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span><div><h4>Crescimento consolidado</h4><p>Com mais de 6 anos de mercado, somos loja oficial reconhecida nos maiores marketplaces do Brasil.</p></div></div>
+            <div class="about-feature"><span class="ic"><svg class="ico" aria-hidden="true"><use href="#i-alvo"/></svg></span><div><h4>Nosso propósito multinicho</h4><p>Trabalhamos focados em casa e jardim, sempre buscando inovar e expandir com produtos de marca própria.</p></div></div>
           </div>
         </div>
-
-        <div class="about-visuals" data-aos="fade-left">
-          <div class="about-card">
-            <img src="logo.png" alt="Símbolo de Identidade da Marqs Home" class="about-card-logo">
-            <h3>A Essência da Nossa Identidade</h3>
-            <p style="color: var(--text-muted); margin-bottom: 16px;">O nosso símbolo vai além da estética, ele une dois conceitos fundamentais que guiam a Marqs Home:</p>
-            <ul style="list-style: none; color: var(--text-muted); margin-bottom: 24px;">
-              <li style="margin-bottom: 12px;"><strong style="color: var(--primary-dark);">A Casa:</strong> Transmite a sensação de acolhimento, família e recepção.</li>
-              <li><strong style="color: var(--primary-dark);">O Ponto de Luz:</strong> Representa a palavra de Deus, orientando nossa visão.</li>
+        <figure class="porto-foto reveal">
+          <img src="assets/porto.jpg" alt="Porto de contêineres com navio cargueiro atracado e guindastes sob céu azul" loading="lazy">
+          <figcaption class="identidade">
+            <img src="assets/logo.png" alt="Símbolo de identidade da Marqs Home">
+            <ul>
+              <li><strong>A Casa:</strong> transmite acolhimento, família e recepção.</li>
+              <li><strong>O Ponto de Luz:</strong> representa a palavra de Deus, orientando nossa visão.</li>
             </ul>
-            <div style="background: rgba(138, 105, 212, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid var(--primary-highlight);">
-              <p style="font-style: italic; font-weight: 600; color: var(--primary-dark); font-size: 0.95rem;">"Tudo posso naquele que me fortalece" <br><span style="color: var(--primary-highlight); font-weight: 500;">- Filipenses 4:13</span></p>
+            <blockquote>"Tudo posso naquele que me fortalece"<cite>Filipenses 4:13</cite></blockquote>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="section-padding produtos">
+      <div class="container">
+        <div class="section-header reveal">
+          <div><p class="etapa"><span>03</span>Nossas linhas · A carga</p><h2 class="section-title">Produtos importados de alta demanda</h2></div>
+          <p class="lede">Quatro linhas que chegam no mesmo navio: conforto para o escritório, lazer para a família e cuidado para o jardim.</p>
+        </div>
+        <div class="products-grid reveal" id="produtosGrid">
+          <article class="product-card">
+            <div class="product-card-bg" role="img" aria-label="Cadeira ergonômica Marqs Home" style="background-image: url('assets/cadeira.webp');"></div>
+            <div class="product-card-overlay"></div>
+            <div class="product-card-content">
+              <h3>Cadeiras &amp; Conforto</h3>
+              <p>Design moderno e ergonômico para escritórios e home office. Modelos com certificação NR-17.</p>
+              <a href="#atacado" class="product-card-link">Orçamento em lote <svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card-bg" role="img" aria-label="Tenda gazebo Marqs Home" style="background-image: url('assets/tenda.webp');"></div>
+            <div class="product-card-overlay"></div>
+            <div class="product-card-content">
+              <h3>Tendas Gazebo</h3>
+              <p>Estruturas resistentes para praia, campo, eventos e cobertura de áreas externas.</p>
+              <a href="#atacado" class="product-card-link">Orçamento em lote <svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card-bg" role="img" aria-label="Cama elástica infantil Marqs Home" style="background-image: url('assets/cama.webp');"></div>
+            <div class="product-card-overlay"></div>
+            <div class="product-card-content">
+              <h3>Camas Elásticas</h3>
+              <p>Linha infantil focada em máxima segurança, alta durabilidade e diversão garantida.</p>
+              <a href="#atacado" class="product-card-link">Orçamento em lote <svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card-bg" role="img" aria-label="Mangueira de jardim Marqs Home" style="background-image: url('assets/mangueira.webp');"></div>
+            <div class="product-card-overlay"></div>
+            <div class="product-card-content">
+              <h3>Mangueiras de Jardim</h3>
+              <p>Praticidade, flexibilidade e alta resistência para irrigação e manutenção geral.</p>
+              <a href="#atacado" class="product-card-link">Orçamento em lote <svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATACADO: O ESTOQUE -->
+    <section id="atacado" class="section-padding">
+      <div class="container">
+        <div class="b2b-wrap reveal">
+          <div class="b2b-bg"><img src="assets/estoque.jpg" alt="" loading="lazy"></div>
+          <div class="b2b-grid">
+            <div>
+              <p class="etapa"><span>04</span>Atacado corporativo · O estoque</p>
+              <h2 class="section-title">Soluções corporativas e atacado</h2>
+              <p class="lede">Ideal para empresas que buscam mobiliar escritórios ou atualizar o setup da equipe. Condições especiais para compras em volume direto da importadora, com estoque à pronta entrega.</p>
+              <ul class="b2b-features">
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Condições especiais para CNPJ e compras em volume</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Cadeiras com certificação de ergonomia NR-17</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Emissão de nota fiscal e garantia nacional</li>
+              </ul>
+            </div>
+            <div class="b2b-form-card">
+              <h3>Solicite um orçamento</h3>
+              <p>Preencha os dados abaixo para falar diretamente com a nossa equipe de vendas.</p>
+              <form id="b2b-form" onsubmit="event.preventDefault(); sendToWhatsapp();">
+                <div class="campo"><label for="name">Empresa ou comprador</label><input type="text" id="name" placeholder="Nome da empresa ou do comprador" required autocomplete="organization"></div>
+                <div class="campo"><label for="phone">Seu WhatsApp</label><input type="tel" id="phone" placeholder="(11) 90000-0000" required autocomplete="tel"></div>
+                <button type="submit" class="btn btn-primary"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitar orçamento no WhatsApp</button>
+              </form>
+              <p class="form-nota">A mensagem abre pronta no WhatsApp da equipe de vendas: +55 (11) 93436-5314.</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SEÇÃO PRODUTOS COM EFEITO HOVER E IMAGENS -->
-  <section id="produtos" class="section-padding" style="background: #F0F2FB;">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Nossas Linhas</span>
-        <h2 class="section-title">Produtos Importados de Alta Demanda</h2>
-      </div>
-
-      <div class="products-grid">
-        <!-- 1. Cadeiras & Conforto -->
-        <article class="product-card" data-aos="fade-up">
-          <div class="product-card-bg" style="background-image: url('https://http2.mlstatic.com/D_NQ_NP_2X_605454-MLA117327576958_102026-F.webp');"></div>
-          <div class="product-card-overlay"></div>
-          <div class="product-card-content">
-            <h3>Cadeiras & Conforto</h3>
-            <p>Design moderno e ergonômico para escritórios e home-office. Modelos com certificação NR-17.</p>
-            <a href="#atacado" class="product-card-link">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <!-- 2. Tendas Gazebo -->
-        <article class="product-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="product-card-bg" style="background-image: url('https://http2.mlstatic.com/D_NQ_NP_2X_655774-MLA114023032494_072026-F.webp');"></div>
-          <div class="product-card-overlay"></div>
-          <div class="product-card-content">
-            <h3>Tendas Gazebo</h3>
-            <p>Estruturas resistentes para praia, campo, eventos e cobertura de áreas externas.</p>
-            <a href="#atacado" class="product-card-link">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <!-- 3. Camas Elásticas -->
-        <article class="product-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="product-card-bg" style="background-image: url('https://http2.mlstatic.com/D_NQ_NP_2X_799792-MLA85412930213_052025-F.webp');"></div>
-          <div class="product-card-overlay"></div>
-          <div class="product-card-content">
-            <h3>Camas Elásticas</h3>
-            <p>Linha infantil focada em máxima segurança, alta durabilidade e diversão garantida.</p>
-            <a href="#atacado" class="product-card-link">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <!-- 4. Mangueiras de Jardim -->
-        <article class="product-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="product-card-bg" style="background-image: url('https://http2.mlstatic.com/D_NQ_NP_2X_801751-MLA113255118524_072026-F.webp');"></div>
-          <div class="product-card-overlay"></div>
-          <div class="product-card-content">
-            <h3>Mangueiras de Jardim</h3>
-            <p>Praticidade, flexibilidade e alta resistência para irrigação e manutenção geral.</p>
-            <a href="#atacado" class="product-card-link">Orçamento em Lote <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO ATACADO COM FORMULÁRIO -->
-  <section id="atacado" class="section-padding container">
-    <div class="b2b-section" data-aos="zoom-in">
-      <div class="b2b-grid">
-        <div>
-          <span class="section-tag" style="color: var(--primary-highlight);">Atacado Corporativo</span>
-          <h2>Soluções Corporativas e Atacado</h2>
-          <p style="color: #C0C1D0;">Ideal para empresas que buscam mobiliar escritórios ou atualizar o setup da equipe. Condições especiais de atacado para compras em volume direto da importadora, com estoque à pronta entrega.</p>
-          <ul class="b2b-features">
-            <li><i class="fa-solid fa-circle-check"></i> Condições especiais para CNPJ e compras em volume</li>
-            <li><i class="fa-solid fa-circle-check"></i> Cadeiras com Certificação de Ergonomia NR-17</li>
-            <li><i class="fa-solid fa-circle-check"></i> Emissão de Nota Fiscal e Garantia Nacional</li>
-          </ul>
+    <!-- LOJAS OFICIAIS -->
+    <section id="lojas" class="section-padding" style="padding-top:0">
+      <div class="container">
+        <div class="section-header reveal">
+          <div><p class="etapa"><span>05</span>Varejo · Até você</p><h2 class="section-title">Nossas lojas oficiais</h2></div>
+          <p class="lede">Compre a unidade nos maiores marketplaces do país, com entrega rápida e garantia total.</p>
         </div>
-
-        <div class="b2b-form-card">
-          <h3>Solicite um Orçamento</h3>
-          <p style="color: #A0A2B8; margin-bottom: 20px; font-size: 0.95rem;">Preencha os dados abaixo para falar diretamente com a nossa Equipe de Vendas.</p>
-          <form id="b2b-form" onsubmit="event.preventDefault(); sendToWhatsapp();">
-            <input type="text" id="name" placeholder="Nome da Empresa / Comprador" required aria-label="Nome da Empresa ou Comprador">
-            <input type="tel" id="phone" placeholder="Seu WhatsApp" required aria-label="Número de Telefone ou WhatsApp">
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              Solicitar Orçamento no WhatsApp
-            </button>
-          </form>
+        <div class="channels-grid">
+          <div class="channel-card">
+            <div><span class="channel-badge"><svg class="ico" aria-hidden="true"><use href="#i-checks"/></svg> Loja oficial</span><div class="channel-logo ml-color">Mercado Livre</div><p>Mais de 1 milhão de vendas concluídas com reputação máxima.</p></div>
+            <a href="https://www.mercadolivre.com.br/loja/marqs-home" target="_blank" rel="noopener" class="btn btn-outline btn-store">Visitar loja ML <svg class="ico" aria-hidden="true"><use href="#i-externo"/></svg></a>
+          </div>
+          <div class="channel-card">
+            <div><span class="channel-badge"><svg class="ico" aria-hidden="true"><use href="#i-checks"/></svg> Loja oficial</span><div class="channel-logo shopee-color">Shopee</div><p>Catálogo completo com ofertas exclusivas e frete ágil.</p></div>
+            <a href="https://shopee.com.br/marqshome" target="_blank" rel="noopener" class="btn btn-outline btn-store">Visitar Shopee <svg class="ico" aria-hidden="true"><use href="#i-externo"/></svg></a>
+          </div>
+          <div class="channel-card">
+            <div><span class="channel-badge"><svg class="ico" aria-hidden="true"><use href="#i-checks"/></svg> Loja oficial</span><div class="channel-logo amazon-color">Amazon</div><p>Qualidade e conveniência na maior plataforma global.</p></div>
+            <a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7&marketplaceID=A2Q3Y263D00KWC" target="_blank" rel="noopener" class="btn btn-outline btn-store">Visitar Amazon <svg class="ico" aria-hidden="true"><use href="#i-externo"/></svg></a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO LOJAS OFICIAIS -->
-  <section id="lojas" class="section-padding official-stores-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Canais de Venda Varejo</span>
-        <h2 class="section-title">Nossas Lojas Oficiais</h2>
-        <p style="color: var(--text-muted);">Adquira nossos produtos unitários através dos maiores marketplaces do país com entrega rápida e garantia total.</p>
-      </div>
-
-      <div class="channels-grid">
-        <!-- Mercado Livre -->
-        <div class="channel-card" data-aos="fade-up">
-          <div>
-            <span class="channel-badge"><i class="fa-solid fa-check-double"></i> Loja Oficial</span>
-            <div class="channel-logo ml-color">Mercado Livre</div>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Mais de 1 Milhão de vendas concluídas com reputação máxima.</p>
-          </div>
-          <a href="https://www.mercadolivre.com.br/loja/marqs-home?client=recoview-selleritems&official_store_id=198462&category_id=MLB193945&item_id=MLB4610157945&recos_listing=true#origin=vpp" target="_blank" rel="noopener" class="btn btn-store">
-            Visitar Loja ML <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
-          </a>
-        </div>
-
-        <!-- Shopee -->
-        <div class="channel-card" data-aos="fade-up" data-aos-delay="100">
-          <div>
-            <span class="channel-badge"><i class="fa-solid fa-check-double"></i> Loja Oficial</span>
-            <div class="channel-logo shopee-color">Shopee</div>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Catálogo completo com ofertas exclusivas e frete ágil.</p>
-          </div>
-          <a href="https://shopee.com.br/marqshome?categoryId=100636&entryPoint=ShopByPDP&itemId=54318631535" target="_blank" rel="noopener" class="btn btn-store">
-            Visitar Shopee <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
-          </a>
-        </div>
-
-        <!-- Amazon -->
-        <div class="channel-card" data-aos="fade-up" data-aos-delay="200">
-          <div>
-            <span class="channel-badge"><i class="fa-solid fa-check-double"></i> Loja Oficial</span>
-            <div class="channel-logo amazon-color">Amazon</div>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Qualidade e conveniência na maior plataforma global.</p>
-          </div>
-          <a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7&marketplaceID=A2Q3Y263D00KWC" target="_blank" rel="noopener" class="btn btn-store">
-            Visitar Amazon <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Marqs Home Logo Rodapé" style="height: 45px; width: auto; margin-bottom: 15px; filter: brightness(0) invert(1);">
+        <img src="assets/logo-claro.png" alt="Marqs Home">
         <p>A Marqs Home é referência nacional na importação e comercialização de produtos de alta qualidade para Casa, Jardim e Linha Infantil.</p>
       </div>
       <div>
         <h4 class="footer-title">Navegação</h4>
-        <ul class="footer-links">
-          <li><a href="#home">Início</a></li>
-          <li><a href="#sobre">Quem Somos</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#atacado">Atacado Corporativo</a></li>
-        </ul>
+        <ul class="footer-links"><li><a href="#home">Início</a></li><li><a href="#sobre">Quem Somos</a></li><li><a href="#produtos">Produtos</a></li><li><a href="#atacado">Atacado Corporativo</a></li></ul>
       </div>
       <div>
         <h4 class="footer-title">Lojas</h4>
-        <ul class="footer-links">
-          <li><a href="https://www.mercadolivre.com.br/loja/marqs-home" target="_blank" rel="noopener">Mercado Livre</a></li>
-          <li><a href="https://shopee.com.br/marqshome" target="_blank" rel="noopener">Shopee</a></li>
-          <li><a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7" target="_blank" rel="noopener">Amazon</a></li>
-        </ul>
+        <ul class="footer-links"><li><a href="https://www.mercadolivre.com.br/loja/marqs-home" target="_blank" rel="noopener">Mercado Livre</a></li><li><a href="https://shopee.com.br/marqshome" target="_blank" rel="noopener">Shopee</a></li><li><a href="https://www.amazon.com.br/s?me=AJ39UHJOB0IP7" target="_blank" rel="noopener">Amazon</a></li></ul>
       </div>
       <div>
-        <h4 class="footer-title">Atacado & Corporativo</h4>
-        <p style="color: #A0A2B8; margin-bottom: 12px;"><i class="fa-solid fa-user"></i> Equipe de Vendas</p>
-        <p style="color: #A0A2B8; margin-bottom: 12px;"><i class="fa-solid fa-phone"></i> +55 (11) 93436-5314</p>
+        <h4 class="footer-title"><a href="#atacado">Atacado &amp; Corporativo</a></h4>
+        <p class="contato"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg> Equipe de Vendas</p>
+        <p class="contato"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> +55 (11) 93436-5314</p>
       </div>
     </div>
-    <div class="footer-bottom container">
-      <p>&copy; Marqs Home. Todos os direitos reservados. "Tudo posso naquele que me fortalece" - Filipenses 4:13</p>
-    </div>
+    <div class="footer-bottom container"><p>&copy; Marqs Home. Todos os direitos reservados. "Tudo posso naquele que me fortalece", Filipenses 4:13</p></div>
   </footer>
 
-  <a href="https://wa.me/5511934365314?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento%20corporativo." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  <a href="https://wa.me/5511934365314?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento%20corporativo." class="whatsapp-float" id="wpp" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true });
-
+    /* formulário e menu (mantidos do site original) */
     function sendToWhatsapp() {
       const name = document.getElementById('name').value;
       const phone = document.getElementById('phone').value;
       const text = `Olá Equipe de Vendas! Me chamo ${name} (Tel: ${phone}) e gostaria de um orçamento corporativo/atacado.`;
-      const url = `https://wa.me/5511934365314?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/5511934365314?text=${encodeURIComponent(text)}`, '_blank');
+    }
+    function toggleMenu() {
+      if (window.innerWidth > 768) return;
+      const navMenu = document.getElementById('nav-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const open = navMenu.classList.toggle('active');
+      menuIcon.querySelector('use').setAttribute('href', open ? '#i-xmark' : '#i-bars');
+      document.querySelector('.mobile-toggle').setAttribute('aria-expanded', open);
+      if (open) document.getElementById('header').classList.add('solid');
     }
 
-    function toggleMenu() {
-      if (window.innerWidth <= 768) {
-        const navMenu = document.getElementById('nav-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        
-        navMenu.classList.toggle('active');
-        
-        if (navMenu.classList.contains('active')) {
-          menuIcon.classList.remove('fa-bars');
-          menuIcon.classList.add('fa-xmark');
-        } else {
-          menuIcon.classList.remove('fa-xmark');
-          menuIcon.classList.add('fa-bars');
+    (function () {
+      const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+      const seg = (p, a, b) => clamp((p - a) / (b - a), 0, 1);
+      const smooth = (p, e0, e1) => { const t = clamp((p - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+      const $ = id => document.getElementById(id);
+      const FONTES = { d: { url: 'assets/hero-scrub.mp4', bytes: 4453164, poster: 'assets/hero-poster.jpg', fim: 'assets/hero-ending.jpg' }, m: { url: 'assets/hero-mobile.mp4', bytes: 3941198, poster: 'assets/hero-mobile-poster.jpg', fim: 'assets/hero-mobile-ending.jpg' } };
+      const MOBILE = ['(max-width: 720px)', '(orientation: portrait) and (max-width: 1024px)', '(orientation: portrait) and (pointer: coarse)'];
+      const modo = () => MOBILE.some(q => matchMedia(q).matches) ? 'm' : 'd';
+      let fonte = FONTES[modo()], carregado = null;
+      const video = $('hero-video'), stage = $('stage'), posterLayer = $('poster'), carga = $('carga');
+
+      /* legendas divididas em palavras (preserva os destaques) */
+      document.querySelectorAll('.split').forEach(el => {
+        const sr = document.createElement('span'); sr.className = 'sr'; sr.textContent = el.textContent.replace(/\s+/g, ' ').trim();
+        const vis = document.createElement('span'); vis.setAttribute('aria-hidden', 'true');
+        const parts = []; let prevSpace = true;
+        el.childNodes.forEach(n => {
+          const hl = n.nodeType === 1; const t = n.textContent || '';
+          t.split(/\s+/).filter(Boolean).forEach((w, j) => { if (j === 0 && parts.length && !prevSpace && !/^\s/.test(t)) { parts[parts.length - 1].w += w; return; } parts.push({ w, hl }); });
+          if (t.length) prevSpace = /\s$/.test(t);
+        });
+        parts.forEach((p, i) => { const s = document.createElement('span'); s.className = 'w' + (p.hl ? ' destaque' : ''); s.style.setProperty('--th', (i / parts.length * .5).toFixed(3)); s.textContent = p.w; vis.appendChild(s); if (i < parts.length - 1) vis.appendChild(document.createTextNode(' ')); });
+        el.textContent = ''; el.appendChild(sr); el.appendChild(vis);
+      });
+      const bands = [...document.querySelectorAll('.band')].map((el, i, all) => ({ el, a: +el.dataset.a, b: +el.dataset.b, first: i === 0, last: i === all.length - 1, op: -1, k: -1 }));
+
+      /* seeks travados */
+      let seekBusy = false, pendingTime = null;
+      function requestSeek(t) { if (!video.duration) return; t = clamp(t, 0, video.duration - .04); if (seekBusy) { pendingTime = t; return; } seekBusy = true; video.currentTime = t; }
+      video.addEventListener('seeked', () => { seekBusy = false; if (pendingTime !== null) { const t = pendingTime; pendingTime = null; requestSeek(t); } });
+      video.addEventListener('error', () => { seekBusy = false; pendingTime = null; stage.classList.remove('video-ready'); if (started) failVideo(); });
+
+      /* legendas, contador e rota */
+      const contador = $('contador'), rota = $('rota'), rotaPct = $('rotaPct'), passos = [...rota.querySelectorAll('li')], cue = $('cue');
+      let lastNum = '', lastNumAt = 0, lastPct = '', lastStep = -1, lastRp = '', cueV = '';
+      const loadStart = performance.now();
+      function updateCaptions(p, now) {
+        const loadK = clamp((now - loadStart - 300) / 1100, 0, 1);
+        for (const b of bands) {
+          const f = Math.min(.02, (b.b - b.a) / 3);
+          const op = (b.first ? 1 : smooth(p, b.a, b.a + f)) * (b.last ? 1 : 1 - smooth(p, b.b - f, b.b));
+          let k = clamp((p - b.a) / Math.min(.06, (b.b - b.a) * .35), 0, 1);
+          if (b.first) k = Math.max(k, loadK);
+          const o = +op.toFixed(3);
+          if (o !== b.op) { b.op = o; b.el.style.opacity = o; b.el.style.visibility = o < .01 ? 'hidden' : 'visible'; }
+          if (Math.abs(k - b.k) >= .008 || (k === 1 && b.k !== 1) || (k === 0 && b.k !== 0)) { b.k = k; b.el.style.setProperty('--k', k.toFixed(3)); }
         }
+        const n = Math.round(1000000 * (1 - Math.pow(1 - seg(p, .51, .62), 3)));
+        const txt = n >= 1000000 ? '+1 milhão' : '+' + n.toLocaleString('pt-BR');
+        if (txt !== lastNum && (now - lastNumAt > 100 || n >= 1000000 || n === 0)) { lastNum = txt; lastNumAt = now; contador.textContent = txt; }
+        const pct = Math.round(20 + p * 50) + '%';
+        if (pct !== lastPct) { lastPct = pct; rotaPct.textContent = pct; }
+        const rp = (.2 + p * .5).toFixed(3); if (rp !== lastRp) { lastRp = rp; rota.style.setProperty('--rp', rp); }
+        const step = p < .02 ? 0 : 1; if (step !== lastStep) { lastStep = step; passos.forEach((li, i) => li.classList.toggle('on', i <= step)); }
+        const c = (1 - seg(p, .015, .05)).toFixed(2); if (c !== cueV) { cueV = c; cue.style.setProperty('--cue', c); }
       }
-    }
+
+      /* loop rAF que descansa */
+      const hero = $('home');
+      let target = 0, shown = 0, rafId = null, lastTick = 0, heroOn = true, scrubOn = false;
+      function heroProgress() { const r = hero.getBoundingClientRect(); const range = hero.offsetHeight - innerHeight; return range > 0 ? clamp(-r.top / range, 0, 1) : 0; }
+      function tick(now) {
+        const dt = Math.min(100, now - (lastTick || now)); lastTick = now;
+        shown += (target - shown) * (1 - Math.pow(1 - .14, dt / 16.667));
+        const loading = now - loadStart < 1600;
+        if (Math.abs(target - shown) < .0005 && !loading) { shown = target; rafId = null; lastTick = 0; } else rafId = requestAnimationFrame(tick);
+        if (video.duration) requestSeek(shown * video.duration);
+        updateCaptions(shown, now);
+      }
+      function kick() { if (rafId === null && heroOn && scrubOn) rafId = requestAnimationFrame(tick); }
+      function onScroll() { target = heroProgress(); kick(); }
+      new IntersectionObserver(es => { heroOn = es[0].isIntersecting; if (heroOn) kick(); }).observe(hero);
+
+      /* vídeo carregado como Blob, com anel de progresso */
+      let started = false;
+      async function loadHeroBlob() {
+        const ctrl = new AbortController(); let wd = setTimeout(() => ctrl.abort(), 20000);
+        const res = await fetch(fonte.url, { priority: 'low', signal: ctrl.signal });
+        if (!res.ok) throw new Error('video ' + res.status);
+        const total = Number(res.headers.get('Content-Length')) || fonte.bytes;
+        const reader = res.body.getReader(); const chunks = []; let got = 0, last = 0;
+        for (;;) { const { done, value } = await reader.read(); if (done) break; clearTimeout(wd); wd = setTimeout(() => ctrl.abort(), 20000); chunks.push(value); got += value.length; const fr = Math.min(1, got / total); const now = performance.now(); if (now - last > 100 || fr === 1) { last = now; carga.style.setProperty('--ld', Math.round(126 * (1 - fr))); } }
+        clearTimeout(wd); carga.style.setProperty('--ld', 0);
+        video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' })); video.load();
+        video.addEventListener('loadeddata', () => {
+          const p = video.play(); if (p && p.then) p.then(() => video.pause()).catch(() => {}); /* acorda o vídeo no iPhone para os seeks aparecerem */
+          requestSeek(shown * video.duration); stage.classList.add('video-ready'); kick();
+        }, { once: true });
+      }
+      function failVideo() { carga.style.display = 'none'; stage.classList.add('video-failed'); posterLayer.style.backgroundImage = "url('" + fonte.fim + "')"; }
+      function initHeroOnce() {
+        const m = modo();
+        if (started && carregado === m) return;
+        if (started) { stage.classList.remove('video-ready', 'video-failed'); carga.style.display = ''; carga.style.setProperty('--ld', 126); video.removeAttribute('src'); video.load(); }
+        started = true; carregado = m; fonte = FONTES[m];
+        posterLayer.style.backgroundImage = "url('" + fonte.poster + "')";
+        const img = new Image(); let go = false; const begin = () => { if (go) return; go = true; loadHeroBlob().catch(failVideo); };
+        img.onload = begin; img.onerror = begin; img.src = fonte.poster; setTimeout(begin, 4000);
+      }
+
+      /* portões do hero estático, decididos ao vivo */
+      const GATES = ['(orientation: landscape) and (pointer: coarse) and (max-height: 560px)', '(prefers-reduced-motion: reduce)'];
+      function enableScrub() { if (scrubOn) return; scrubOn = true; initHeroOnce(); addEventListener('scroll', onScroll, { passive: true }); bands.forEach(b => { b.op = -1; b.k = -1; }); lastNum = ''; lastStep = -1; shown = target = heroProgress(); updateCaptions(shown, performance.now()); kick(); }
+      function disableScrub() { if (!scrubOn) return; scrubOn = false; removeEventListener('scroll', onScroll); if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; } }
+      function applyHeroMode() { if (GATES.some(q => matchMedia(q).matches)) disableScrub(); else { enableScrub(); initHeroOnce(); onScroll(); } }
+      const MQLS = GATES.concat(MOBILE).map(q => matchMedia(q));
+      MQLS.forEach(m => m.addEventListener('change', applyHeroMode));
+
+      /* cabeçalho e botão flutuante */
+      const header = $('header'), wpp = $('wpp'); let solid = null, wHide = null;
+      function chrome() {
+        const b = hero.getBoundingClientRect().bottom;
+        const s = b < 90 || document.getElementById('nav-menu').classList.contains('active');
+        if (s !== solid) { solid = s; header.classList.toggle('solid', s); }
+        const h = scrubOn && b > innerHeight * .5; if (h !== wHide) { wHide = h; wpp.classList.toggle('escondido', h); }
+      }
+      addEventListener('scroll', chrome, { passive: true });
+
+      /* entradas */
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+      document.querySelectorAll('.reveal, #produtosGrid').forEach(el => io.observe(el));
+      document.addEventListener('visibilitychange', () => document.body.classList.toggle('paused', document.hidden));
+
+      /* movimento reduzido ao vivo, nas duas direções */
+      const rm = matchMedia('(prefers-reduced-motion: reduce)');
+      function pinToFinalStates() { document.querySelectorAll('.reveal, #produtosGrid').forEach(el => el.classList.add('in')); }
+      if (rm.matches) pinToFinalStates();
+      rm.addEventListener('change', e => { if (e.matches) pinToFinalStates(); applyHeroMode(); });
+
+      applyHeroMode(); chrome();
+    })();
   </script>
 </body>
 </html>
